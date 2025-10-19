@@ -8,11 +8,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #181414;
-  /* Prevent scroll during loading */
   overflow-x: hidden;
 }
-
-/* Loading Screen Animations */
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -46,7 +43,6 @@ body {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Skeleton Loading Shimmer Effect */
 .skeleton-card {
   position: relative;
   overflow: hidden;
@@ -63,13 +59,11 @@ body {
   animation: shimmer 2s infinite;
 }
 
-/* Performance optimization for transforms - only on hover */
 .group\/card:hover img,
 .group\/card:hover .absolute {
   will-change: transform, opacity;
 }
 
-/* Banner Carousel Performance Optimization */
 #banner-carousel {
   overflow: hidden;
   position: relative;
@@ -88,14 +82,12 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-/* Smooth transitions for navigation arrows */
 button[id*='scroll'],
 button[id*='banner'] {
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.3s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-/* Custom scrollbar for horizontal scrolling */
 ::-webkit-scrollbar {
   height: 6px;
   width: 6px;
@@ -115,12 +107,10 @@ button[id*='banner'] {
   background: #4aa556;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar for horizontal scroll containers but keep functionality */
 .lg\:overflow-x-auto::-webkit-scrollbar {
   height: 4px;
 }
@@ -133,29 +123,21 @@ html {
   display: none;
 }
 
-/* Focus styles for accessibility */
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid #57b660;
   outline-offset: 2px;
 }
 
-/* Card shadow enhancements */
 .hover\:shadow-2xl:hover {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Prevent image drag */
 img {
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* ====================================================================
-   MOBILE MENU
-   ==================================================================== */
-
-/* Mobile Menu Overlay */
 #mobile-menu {
   position: fixed;
   top: 0;
@@ -173,7 +155,6 @@ img {
   transform: translateX(0);
 }
 
-/* Hamburger Icon Animation */
 .hamburger-line {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
@@ -192,7 +173,6 @@ img {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Mobile Menu Links */
 .mobile-menu-link {
   transition: all 0.2s ease;
 }
@@ -201,16 +181,10 @@ img {
   transform: scale(0.98);
 }
 
-/* Prevent body scroll when menu is open */
 body.menu-open {
   overflow: hidden;
 }
 
-/* ====================================================================
-   PRODUCT DETAIL PAGE ENHANCEMENTS
-   ==================================================================== */
-
-/* Enhanced Thumbnail Gallery - Smooth Active Indicator */
 .thumbnail-btn {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -247,7 +221,6 @@ body.menu-open {
   opacity: 1;
 }
 
-/* Gradient Card Enhancement - Glassmorphism */
 .product-detail-card {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -282,7 +255,6 @@ body.menu-open {
   }
 }
 
-/* Section Dividers with Animation (No Icons) */
 .section-divider {
   position: relative;
   overflow: hidden;
@@ -320,7 +292,6 @@ body.menu-open {
   }
 }
 
-/* Scroll Animations - Fade In */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -397,11 +368,6 @@ body.menu-open {
   -webkit-transform: translateZ(0);
 }
 
-/* ====================================================================
-   ANIMATION CLASSES (Replace inline styles)
-   ==================================================================== */
-
-/* Fade animations */
 .fade-out {
   opacity: 0;
   transform: translateY(10px);
@@ -414,7 +380,6 @@ body.menu-open {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-/* Card enter animation */
 .card-enter {
   opacity: 0;
   transform: translateY(20px);
@@ -426,15 +391,25 @@ body.menu-open {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Stagger delay utilities */
-.stagger-1 { animation-delay: 50ms; }
-.stagger-2 { animation-delay: 100ms; }
-.stagger-3 { animation-delay: 150ms; }
-.stagger-4 { animation-delay: 200ms; }
-.stagger-5 { animation-delay: 250ms; }
-.stagger-6 { animation-delay: 300ms; }
+.stagger-1 {
+  animation-delay: 50ms;
+}
+.stagger-2 {
+  animation-delay: 100ms;
+}
+.stagger-3 {
+  animation-delay: 150ms;
+}
+.stagger-4 {
+  animation-delay: 200ms;
+}
+.stagger-5 {
+  animation-delay: 250ms;
+}
+.stagger-6 {
+  animation-delay: 300ms;
+}
 
-/* Smooth transitions */
 .transition-smooth {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
