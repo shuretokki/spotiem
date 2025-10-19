@@ -7,8 +7,7 @@ export const ANIMATIONS = {
   STAGGER: 50,
 };
 
-export const COLORS = {
-};
+export const COLORS = {};
 
 // Breakpoints (matches Tailwind)
 export const BREAKPOINTS = {
