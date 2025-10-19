@@ -8,8 +8,7 @@ export const ANIMATIONS = {
 };
 
 export const COLORS = {};
-
-// Breakpoints (matches Tailwind)
+
 export const BREAKPOINTS = {
   SM: 640,
   MD: 768,
@@ -44,8 +43,7 @@ export const LOADING = {
   PAGE_FADE: 400,
   IMAGE_PRELOAD: 2,
 };
-
-// Toast configuration
+
 export const TOAST_CONFIG = {
   DURATION: 3000,
   POSITION: 'bottom-center',
@@ -62,8 +60,7 @@ export const TOAST_CONFIG = {
     warning: '#F59E0B',
   },
 };
-
-// Routes
+
 export const ROUTES = {
   HOME: '/',
   PRODUCT: '/product/:id',
@@ -71,8 +68,7 @@ export const ROUTES = {
   CART: '/cart',
   WISHLIST: '/wishlist',
 };
-
-// CSS Classes (reusable Tailwind combinations)
+
 export const CSS_CLASSES = {
   BUTTON_PRIMARY:
     'px-6 py-2 bg-[#57B660] rounded-full text-black text-sm font-medium hover:bg-[#4da555] transition-all',
@@ -84,8 +80,7 @@ export const CSS_CLASSES = {
   FADE_IN: 'opacity-0 translate-y-2 transition-all duration-300',
   FADE_OUT: 'opacity-100 translate-y-0 transition-all duration-300',
 };
-
-// Banner slides data
+
 export const BANNER_SLIDES = [
   {
     title: 'Premium Audio Collection',
