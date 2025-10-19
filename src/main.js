@@ -9,6 +9,7 @@ import './style.css';
 import { router } from './router.js';
 import { homeTemplate, productDetailTemplate } from './templates.js';
 import { getAllProducts, getProductById } from './productData.js';
+import { toast } from './toast.js';
 
 /**
  * ====================================================================
@@ -608,7 +609,7 @@ function setupProductButtons(product) {
     addToWishlistBtn.addEventListener('click', () => {
       console.log('Added to wishlist:', product.title);
       // TODO: Implement wishlist functionality (localStorage, API call, etc.)
-      alert(`${product.title} added to wishlist!`);
+      toast.success(`${product.title} added to wishlist!`);
     });
   }
 
@@ -616,7 +617,7 @@ function setupProductButtons(product) {
     addToCartBtn.addEventListener('click', () => {
       console.log('Added to cart:', product.title);
       // TODO: Implement cart functionality (localStorage, API call, etc.)
-      alert(`${product.title} added to cart!`);
+      toast.success(`${product.title} added to cart!`);
     });
   }
 }
