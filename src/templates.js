@@ -16,7 +16,7 @@ export function homeTemplate() {
       <div class="relative w-full h-[124px] md:h-[204px] lg:h-[352px] rounded-2xl overflow-hidden group">
         <!-- Skeleton loader (will be removed when carousel loads) -->
         <div id="banner-skeleton" class="skeleton-card w-full h-full rounded-2xl"></div>
-        
+
         <!-- Carousel container -->
         <div id="banner-carousel" class="w-full h-full"></div>
 
@@ -104,7 +104,7 @@ export function productDetailTemplate(product) {
   return `
     <section class="px-4 md:px-8 lg:px-32 py-4 md:py-8">
       <div class="flex flex-col lg:flex-row gap-5 lg:gap-5 items-start w-full max-w-[1920px] mx-auto">
-        
+
         <!-- Left: Product Images -->
         <div class="w-full lg:w-1/2 lg:max-w-[700px] flex flex-col gap-6 lg:gap-10 flex-shrink-0">
           <!-- Featured Image -->
@@ -142,7 +142,7 @@ export function productDetailTemplate(product) {
 
         <!-- Right: Product Info & Pricing -->
         <div class="w-full lg:flex-1 bg-gradient-to-b from-[rgba(15,15,15,0.12)] to-[rgba(247,159,26,0.12)] border border-white/12 rounded-2xl lg:rounded-[32px] p-6 md:p-8 lg:p-12">
-          
+
           <!-- Product Title & Subtitle -->
           <div class="flex flex-col gap-4 items-center text-center mb-6 lg:mb-10">
             <h1 class="text-xl md:text-2xl lg:text-[24px] font-bold text-white leading-tight">
@@ -158,9 +158,9 @@ export function productDetailTemplate(product) {
             <p class="text-lg md:text-xl lg:text-[18px] font-bold text-[#57B660] mb-4">
               ${product.price}
             </p>
-            
+
             <div class="flex flex-col gap-4 lg:gap-5 w-full">
-              <button 
+              <button
                 id="add-to-wishlist"
                 class="w-full py-3 lg:py-[15.536px] px-10 border border-white rounded-full text-white text-xs lg:text-[12px] font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 group"
               >
@@ -169,8 +169,8 @@ export function productDetailTemplate(product) {
                 </svg>
                 Add to Wishlist
               </button>
-              
-              <button 
+
+              <button
                 id="add-to-cart"
                 class="w-full py-3 lg:py-[15.536px] px-10 bg-[#57B660] rounded-full text-[#181414] text-xs lg:text-[12px] font-bold hover:bg-[#4da555] transition-all flex items-center justify-center gap-2 group"
               >
@@ -186,13 +186,15 @@ export function productDetailTemplate(product) {
 
           <!-- Additional Info: Features, Specifications, Package -->
           <div class="flex flex-col gap-6 lg:gap-10 px-0 lg:px-[18px]">
-            
+
             <!-- Features -->
             <div class="flex flex-col gap-4 lg:gap-5">
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Features</h2>
               <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
-                ${product.features.map((feature) => `<p class="mb-0">${feature}</p>`).join('')}
+                ${product.features
+                  .map((feature) => `<p class="mb-0">${feature}</p>`)
+                  .join('')}
               </div>
             </div>
 
@@ -201,7 +203,9 @@ export function productDetailTemplate(product) {
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Specification</h2>
               <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
-                ${product.specifications.map((spec) => `<p class="mb-0">${spec}</p>`).join('')}
+                ${product.specifications
+                  .map((spec) => `<p class="mb-0">${spec}</p>`)
+                  .join('')}
               </div>
             </div>
 
@@ -210,7 +214,9 @@ export function productDetailTemplate(product) {
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Package</h2>
               <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
-                ${product.package.map((item) => `<p class="mb-0">${item}</p>`).join('')}
+                ${product.package
+                  .map((item) => `<p class="mb-0">${item}</p>`)
+                  .join('')}
               </div>
             </div>
 

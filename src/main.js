@@ -510,7 +510,7 @@ function setupScrollNavigation() {
 window.addEventListener('load', () => {
   // Initialize router first
   initializeRouter();
-  
+
   // Performance optimization: Batch DOM operations
   requestAnimationFrame(() => {
     // Route to current path (handles initial load and direct URLs)
@@ -555,7 +555,7 @@ window.addEventListener('load', () => {
  */
 function initProductDetail(productId) {
   const product = getProductById(productId);
-  
+
   if (!product) {
     // Product not found - redirect to home
     router.navigate('/');
@@ -588,7 +588,9 @@ function setupThumbnailGallery() {
         featuredImage.src = img.src;
 
         // Update active state
-        thumbnails.forEach((t) => t.classList.remove('ring-2', 'ring-[#57B660]'));
+        thumbnails.forEach((t) =>
+          t.classList.remove('ring-2', 'ring-[#57B660]'),
+        );
         btn.classList.add('ring-2', 'ring-[#57B660]');
       }
     });
@@ -717,10 +719,10 @@ function renderProductDetailPage(productId) {
 function setupLinkInterception() {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.product-link, a[href^="/"]');
-    
+
     if (link && link.href) {
       const url = new URL(link.href);
-      
+
       // Only intercept same-origin links
       if (url.origin === window.location.origin) {
         e.preventDefault();

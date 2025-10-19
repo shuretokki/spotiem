@@ -83,7 +83,10 @@
       >
         <!-- Logo -->
         <!-- Logo -->
-        <a href="/" class="product-link flex gap-1 items-center justify-center flex-shrink-0 group">
+        <a
+          href="/"
+          class="product-link flex gap-1 items-center justify-center flex-shrink-0 group"
+        >
           <img
             src="/ac6ad4d6845d01988c43714cfe8ad2cff6ae165f.svg"
             alt="Spotiem Logo"
@@ -348,146 +351,26 @@
       </nav>
 
       <!-- SECTION: BANNER CAROUSEL - Mobile: 124px, Tablet: 204px, Desktop: 352px -->
-            <!-- Main Content Container (SPA - content dynamically loaded) -->
+      <!-- Main Content Container (SPA - content dynamically loaded) -->
       <main id="app-content">
-      <!-- SECTION: BANNER -->
-      <section class="px-4 md:px-8 lg:px-16 py-1 shrink-0 relative group">
-        <div
-          id="banner-carousel"
-          class="relative h-[124px] md:h-[204px] lg:h-[352px] w-full overflow-hidden bg-gray-800/50"
-        >
-          <!-- Skeleton Loader for Banner -->
+        <!-- SECTION: BANNER -->
+        <section class="px-4 md:px-8 lg:px-16 py-1 shrink-0 relative group">
           <div
-            id="banner-skeleton"
-            class="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-800/50 via-gray-700/50 to-gray-800/50"
-          ></div>
-          <!-- Banner slides will be rendered bys JavaScript -->
-        </div>
-
-        <!-- Carousel Navigation Arrows -->
-        <button
-          id="banner-prev"
-          class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            id="banner-carousel"
+            class="relative h-[124px] md:h-[204px] lg:h-[352px] w-full overflow-hidden bg-gray-800/50"
           >
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-
-        <button
-          id="banner-next"
-          class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-
-        <!-- Carousel Indicators -->
-        <div
-          id="banner-indicators"
-          class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
-        >
-          <!-- Indicators will be rendered by JavaScript -->
-        </div>
-      </section>
-
-      <!-- SECTION: DISPLAY (Newest) -->
-      <section class="px-4 md:px-8 lg:px-16 py-6 md:py-8 lg:py-10 bg-[#181414]">
-        <h2
-          class="text-2xl md:text-[28px] lg:text-[32px] font-bold mb-5 md:mb-6"
-        >
-          Newest
-        </h2>
-
-        <!-- Product Grid: Mobile 2col, Tablet 4col, Desktop scrollable row -->
-        <div class="relative group">
-          <div
-            id="newest-grid"
-            class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:flex lg:gap-4 lg:overflow-x-auto lg:pb-2 lg:scrollbar-thin scroll-smooth"
-          >
-            <!-- Skeleton Loaders for Cards -->
-            <div class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]">
-              <div
-                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-              ></div>
-              <div class="p-3 pb-4 space-y-2">
-                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-                <div
-                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
-                ></div>
-                <div
-                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
-                ></div>
-              </div>
-            </div>
-            <div class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]">
-              <div
-                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-              ></div>
-              <div class="p-3 pb-4 space-y-2">
-                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-                <div
-                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
-                ></div>
-                <div
-                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
-                ></div>
-              </div>
-            </div>
-            <div class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]">
-              <div
-                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-              ></div>
-              <div class="p-3 pb-4 space-y-2">
-                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-                <div
-                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
-                ></div>
-                <div
-                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
-                ></div>
-              </div>
-            </div>
-            <div class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]">
-              <div
-                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-              ></div>
-              <div class="p-3 pb-4 space-y-2">
-                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-                <div
-                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
-                ></div>
-                <div
-                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
-                ></div>
-              </div>
-            </div>
-            <!-- Cards will be rendered by JavaScript -->
+            <!-- Skeleton Loader for Banner -->
+            <div
+              id="banner-skeleton"
+              class="absolute inset-0 animate-pulse bg-gradient-to-r from-gray-800/50 via-gray-700/50 to-gray-800/50"
+            ></div>
+            <!-- Banner slides will be rendered bys JavaScript -->
           </div>
 
-          <!-- Scroll Navigation Arrows (Desktop only) -->
+          <!-- Carousel Navigation Arrows -->
           <button
-            id="newest-scroll-left"
-            class="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#57B660] hover:bg-[#4aa556] rounded-full items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg z-10"
+            id="banner-prev"
+            class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
           >
             <svg
               width="20"
@@ -504,8 +387,8 @@
           </button>
 
           <button
-            id="newest-scroll-right"
-            class="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#57B660] hover:bg-[#4aa556] rounded-full items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg z-10"
+            id="banner-next"
+            class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 z-10"
           >
             <svg
               width="20"
@@ -520,85 +403,231 @@
               <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
           </button>
-        </div>
-      </section>
 
-      <!-- SECTION: DISPLAY (Discover) -->
-      <section
-        class="px-4 md:px-8 lg:px-16 py-6 md:py-8 lg:py-10 flex-1 bg-[#181414]"
-      >
-        <div class="flex items-center gap-4 mb-4 md:mb-6">
-          <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">Discover</h2>
-        </div>
+          <!-- Carousel Indicators -->
+          <div
+            id="banner-indicators"
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10"
+          >
+            <!-- Indicators will be rendered by JavaScript -->
+          </div>
+        </section>
 
-        <!-- Filter Tags -->
-        <div class="flex gap-2 md:gap-3 mb-6 overflow-x-auto pb-2">
-          <button
-            class="px-5 md:px-7 py-2.5 rounded-full bg-[#57B660] text-black text-xs md:text-sm whitespace-nowrap font-semibold hover:bg-[#4aa556] transition-all shadow-md"
-          >
-            All
-          </button>
-          <button
-            class="px-5 md:px-7 py-2.5 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm whitespace-nowrap hover:bg-gray-800 transition-all"
-          >
-            V-shaped
-          </button>
-          <button
-            class="px-5 md:px-7 py-2.5 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm whitespace-nowrap hover:bg-gray-800 transition-all"
-          >
-            All rounder
-          </button>
-        </div>
-
-        <!-- Product Grid: Mobile 2col, Tablet 2col, Desktop flex-wrap -->
-        <div
-          id="discover-grid"
-          class="grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-3 md:gap-5 lg:gap-6"
+        <!-- SECTION: DISPLAY (Newest) -->
+        <section
+          class="px-4 md:px-8 lg:px-16 py-6 md:py-8 lg:py-10 bg-[#181414]"
         >
-          <!-- Skeleton Loaders for Discover Cards -->
-          <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
+          <h2
+            class="text-2xl md:text-[28px] lg:text-[32px] font-bold mb-5 md:mb-6"
+          >
+            Newest
+          </h2>
+
+          <!-- Product Grid: Mobile 2col, Tablet 4col, Desktop scrollable row -->
+          <div class="relative group">
             <div
-              class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-            ></div>
-            <div class="p-3 pb-4 space-y-2">
-              <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-              <div class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"></div>
-              <div class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"></div>
+              id="newest-grid"
+              class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:flex lg:gap-4 lg:overflow-x-auto lg:pb-2 lg:scrollbar-thin scroll-smooth"
+            >
+              <!-- Skeleton Loaders for Cards -->
+              <div
+                class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]"
+              >
+                <div
+                  class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+                ></div>
+                <div class="p-3 pb-4 space-y-2">
+                  <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                  <div
+                    class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                  ></div>
+                  <div
+                    class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]"
+              >
+                <div
+                  class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+                ></div>
+                <div class="p-3 pb-4 space-y-2">
+                  <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                  <div
+                    class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                  ></div>
+                  <div
+                    class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]"
+              >
+                <div
+                  class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+                ></div>
+                <div class="p-3 pb-4 space-y-2">
+                  <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                  <div
+                    class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                  ></div>
+                  <div
+                    class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="skeleton-card w-full lg:min-w-[168px] lg:max-w-[168px]"
+              >
+                <div
+                  class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+                ></div>
+                <div class="p-3 pb-4 space-y-2">
+                  <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                  <div
+                    class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                  ></div>
+                  <div
+                    class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                  ></div>
+                </div>
+              </div>
+              <!-- Cards will be rendered by JavaScript -->
             </div>
+
+            <!-- Scroll Navigation Arrows (Desktop only) -->
+            <button
+              id="newest-scroll-left"
+              class="hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#57B660] hover:bg-[#4aa556] rounded-full items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg z-10"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <button
+              id="newest-scroll-right"
+              class="hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#57B660] hover:bg-[#4aa556] rounded-full items-center justify-center transition-all duration-300 opacity-0 group-hover:opacity-100 shadow-lg z-10"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
           </div>
-          <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
-            <div
-              class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-            ></div>
-            <div class="p-3 pb-4 space-y-2">
-              <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-              <div class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"></div>
-              <div class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"></div>
+        </section>
+
+        <!-- SECTION: DISPLAY (Discover) -->
+        <section
+          class="px-4 md:px-8 lg:px-16 py-6 md:py-8 lg:py-10 flex-1 bg-[#181414]"
+        >
+          <div class="flex items-center gap-4 mb-4 md:mb-6">
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold">Discover</h2>
+          </div>
+
+          <!-- Filter Tags -->
+          <div class="flex gap-2 md:gap-3 mb-6 overflow-x-auto pb-2">
+            <button
+              class="px-5 md:px-7 py-2.5 rounded-full bg-[#57B660] text-black text-xs md:text-sm whitespace-nowrap font-semibold hover:bg-[#4aa556] transition-all shadow-md"
+            >
+              All
+            </button>
+            <button
+              class="px-5 md:px-7 py-2.5 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm whitespace-nowrap hover:bg-gray-800 transition-all"
+            >
+              V-shaped
+            </button>
+            <button
+              class="px-5 md:px-7 py-2.5 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm whitespace-nowrap hover:bg-gray-800 transition-all"
+            >
+              All rounder
+            </button>
+          </div>
+
+          <!-- Product Grid: Mobile 2col, Tablet 2col, Desktop flex-wrap -->
+          <div
+            id="discover-grid"
+            class="grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-3 md:gap-5 lg:gap-6"
+          >
+            <!-- Skeleton Loaders for Discover Cards -->
+            <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
+              <div
+                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+              ></div>
+              <div class="p-3 pb-4 space-y-2">
+                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                <div
+                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                ></div>
+                <div
+                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                ></div>
+              </div>
             </div>
-          </div>
-          <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
-            <div
-              class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-            ></div>
-            <div class="p-3 pb-4 space-y-2">
-              <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-              <div class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"></div>
-              <div class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"></div>
+            <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
+              <div
+                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+              ></div>
+              <div class="p-3 pb-4 space-y-2">
+                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                <div
+                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                ></div>
+                <div
+                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                ></div>
+              </div>
             </div>
-          </div>
-          <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
-            <div
-              class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
-            ></div>
-            <div class="p-3 pb-4 space-y-2">
-              <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
-              <div class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"></div>
-              <div class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"></div>
+            <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
+              <div
+                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+              ></div>
+              <div class="p-3 pb-4 space-y-2">
+                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                <div
+                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                ></div>
+                <div
+                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                ></div>
+              </div>
             </div>
+            <div class="skeleton-card w-full lg:w-[calc(25%-18px)]">
+              <div
+                class="aspect-square bg-gray-800/50 rounded-2xl animate-pulse"
+              ></div>
+              <div class="p-3 pb-4 space-y-2">
+                <div class="h-4 bg-gray-700/50 rounded animate-pulse"></div>
+                <div
+                  class="h-3 bg-gray-700/30 rounded w-2/3 animate-pulse"
+                ></div>
+                <div
+                  class="h-4 bg-gray-700/40 rounded w-1/2 animate-pulse"
+                ></div>
+              </div>
+            </div>
+            <!-- Cards will be rendered by JavaScript -->
           </div>
-          <!-- Cards will be rendered by JavaScript -->
-        </div>
-      </section>
+        </section>
       </main>
 
       <!-- DIVIDER -->

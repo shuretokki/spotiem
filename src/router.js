@@ -2,7 +2,7 @@
 
 /**
  * SPA Router - Clean URL routing without page reloads
- * 
+ *
  * Usage:
  * - router.navigate('/product/123') - Navigate to product detail
  * - router.navigate('/') - Navigate to home
@@ -15,7 +15,7 @@ class Router {
     this.routes = new Map();
     this.currentRoute = null;
     this.params = {};
-    
+
     // Listen for browser back/forward
     window.addEventListener('popstate', () => {
       this.handleRoute(window.location.pathname);
