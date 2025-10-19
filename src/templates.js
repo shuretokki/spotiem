@@ -193,7 +193,9 @@ export function productDetailTemplate(product) {
               <div class="w-full h-[1px] section-divider"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
                 ${product.features
-                  .map((feature) => `<p class="mb-0 stagger-item">${feature}</p>`)
+                  .map(
+                    (feature) => `<p class="mb-0 stagger-item">${feature}</p>`,
+                  )
                   .join('')}
               </div>
             </div>
