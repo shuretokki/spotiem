@@ -1,26 +1,24 @@
 /** @format */
 
 /**
- * Template Components - Reusable HTML templates
- * Keeps main.js and index.html clean and maintainable
+ * Reusable
  */
 
 /**
- * Home Page Template
+ * Home Page
  * @returns {string} HTML string for home page
  */
 export function homeTemplate() {
   return `
     <!-- Banner Carousel Section -->
     <section class="px-4 md:px-8 lg:px-16 py-1">
-      <div class="relative w-full h-[124px] md:h-[204px] lg:h-[352px] rounded-2xl overflow-hidden group">
-        <!-- Skeleton loader (will be removed when carousel loads) -->
+      <div class="relative w-full h-[124px] md:h-[204px] lg:h-[352px] overflow-hidden group">
         <div id="banner-skeleton" class="skeleton-card w-full h-full rounded-2xl"></div>
 
         <!-- Carousel container -->
         <div id="banner-carousel" class="w-full h-full"></div>
 
-        <!-- Navigation Arrows -->
+        <!-- Arrows -->
         <button
           id="banner-prev"
           class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-white/20 z-10"
@@ -45,7 +43,7 @@ export function homeTemplate() {
       </div>
     </section>
 
-    <!-- Newest Section -->
+    <!-- Newest -->
     <section class="px-4 md:px-8 lg:px-16 py-4">
       <div class="flex items-center justify-between mb-3 md:mb-4">
         <h2 class="text-xl md:text-2xl font-bold text-white">Newest</h2>
@@ -64,7 +62,6 @@ export function homeTemplate() {
       </div>
 
       <div id="newest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:flex lg:gap-4 lg:overflow-x-auto lg:scroll-smooth scrollbar-hide pb-2">
-        <!-- Skeleton loaders (will be replaced by actual products) -->
         <div class="skeleton-card aspect-square rounded-2xl"></div>
         <div class="skeleton-card aspect-square rounded-2xl"></div>
         <div class="skeleton-card aspect-square rounded-2xl"></div>
@@ -72,24 +69,30 @@ export function homeTemplate() {
       </div>
     </section>
 
-    <!-- Discover Section -->
+    <!-- Discover -->
     <section class="px-4 md:px-8 lg:px-16 py-4 pb-8">
       <h2 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Discover</h2>
 
-      <div class="flex gap-2 flex-wrap mb-4 md:mb-5">
-        <button class="px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-white text-xs md:text-sm font-medium transition-all hover:bg-[#4da555]">All</button>
-        <button class="px-5 md:px-7 py-2 rounded-full bg-white/10 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/20">IEM</button>
-        <button class="px-5 md:px-7 py-2 rounded-full bg-white/10 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/20">Headphone</button>
-        <button class="px-5 md:px-7 py-2 rounded-full bg-white/10 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/20">Eartips</button>
-        <button class="px-5 md:px-7 py-2 rounded-full bg-white/10 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/20">Cable</button>
+      <div id="category-filters" class="flex gap-2 flex-wrap mb-4 md:mb-5">
+        <button data-category="All" class="category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-bold transition-all hover:bg-[#4da555]">All</button>
+        <button data-category="IEM" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">IEM</button>
+        <button data-category="Headphone" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">Headphone</button>
+        <button data-category="Eartips" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">Eartips</button>
       </div>
 
-      <div id="discover-grid" class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4 lg:flex lg:flex-wrap lg:gap-6">
+      <div id="discover-grid" class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4 lg:flex lg:flex-wrap lg:gap-6" style="transition: opacity 0.2s ease, transform 0.2s ease;">
         <!-- Skeleton loaders (will be replaced by actual products) -->
         <div class="skeleton-card aspect-square rounded-2xl"></div>
         <div class="skeleton-card aspect-square rounded-2xl"></div>
         <div class="skeleton-card aspect-square rounded-2xl"></div>
         <div class="skeleton-card aspect-square rounded-2xl"></div>
+      </div>
+
+      <!-- See More Button -->
+      <div class="flex justify-center mt-6">
+        <button id="see-more-btn" style="display: none; transition: all 0.3s ease;" class="px-8 py-3 rounded-full bg-transparent border-2 border-[#57B660] text-[#57B660] text-sm font-semibold hover:bg-[#57B660] hover:text-black transition-all duration-300">
+          See More
+        </button>
       </div>
     </section>
   `;
