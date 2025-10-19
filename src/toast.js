@@ -17,14 +17,16 @@ export function showToast(message, type = 'success', duration = 3000) {
   if (!container) {
     container = document.createElement('div');
     container.id = 'toast-container';
-    container.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] flex flex-col gap-3 pointer-events-none';
+    container.className =
+      'fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999] flex flex-col gap-3 pointer-events-none';
     document.body.appendChild(container);
   }
 
   // Create toast element
   const toast = document.createElement('div');
-  toast.className = 'toast-item pointer-events-auto transform translate-y-[200px] opacity-0 transition-all duration-300 ease-out';
-  
+  toast.className =
+    'toast-item pointer-events-auto transform translate-y-[200px] opacity-0 transition-all duration-300 ease-out';
+
   // Get icon and color based on type
   const iconColors = {
     success: 'text-[#57B660]',
@@ -92,7 +94,9 @@ export function showToast(message, type = 'success', duration = 3000) {
   const autoRemoveTimeout = setTimeout(removeToast, duration);
 
   // Clear timeout if manually closed
-  closeBtn.addEventListener('click', () => clearTimeout(autoRemoveTimeout), { once: true });
+  closeBtn.addEventListener('click', () => clearTimeout(autoRemoveTimeout), {
+    once: true,
+  });
 }
 
 /**

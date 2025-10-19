@@ -106,7 +106,7 @@ export function productDetailTemplate(product) {
       <div class="flex flex-col lg:flex-row gap-5 lg:gap-5 items-start w-full max-w-[1920px] mx-auto">
 
         <!-- Left: Product Images -->
-        <div class="w-full lg:w-1/2 lg:max-w-[700px] flex flex-col gap-6 lg:gap-10 flex-shrink-0">
+        <div class="w-full lg:w-1/2 lg:max-w-[700px] flex flex-col gap-6 lg:gap-10 flex-shrink-0 fade-in-up">
           <!-- Featured Image -->
           <div class="w-full aspect-square rounded-2xl lg:rounded-[32px] overflow-hidden bg-[#d9d9d9]">
             <img
@@ -118,7 +118,7 @@ export function productDetailTemplate(product) {
           </div>
 
           <!-- Thumbnail Gallery -->
-          <div id="thumbnail-gallery" class="flex gap-3 lg:gap-5 items-center justify-center w-full overflow-x-auto scrollbar-hide">
+          <div id="thumbnail-gallery" class="flex gap-3 lg:gap-5 items-center justify-center w-full overflow-x-auto scrollbar-hide fade-in-up">
             ${product.images
               .map(
                 (img, index) => `
@@ -141,7 +141,7 @@ export function productDetailTemplate(product) {
         </div>
 
         <!-- Right: Product Info & Pricing -->
-        <div class="w-full lg:flex-1 bg-gradient-to-b from-[rgba(15,15,15,0.12)] to-[rgba(247,159,26,0.12)] border border-white/12 rounded-2xl lg:rounded-[32px] p-6 md:p-8 lg:p-12">
+        <div class="w-full lg:flex-1 product-detail-card bg-gradient-to-b from-[rgba(15,15,15,0.12)] to-[rgba(247,159,26,0.12)] border border-white/12 rounded-2xl lg:rounded-[32px] p-6 md:p-8 lg:p-12 fade-in-up">
 
           <!-- Product Title & Subtitle -->
           <div class="flex flex-col gap-4 items-center text-center mb-6 lg:mb-10">
@@ -190,10 +190,10 @@ export function productDetailTemplate(product) {
             <!-- Features -->
             <div class="flex flex-col gap-4 lg:gap-5">
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Features</h2>
-              <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div class="w-full h-[1px] section-divider"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
                 ${product.features
-                  .map((feature) => `<p class="mb-0">${feature}</p>`)
+                  .map((feature) => `<p class="mb-0 stagger-item">${feature}</p>`)
                   .join('')}
               </div>
             </div>
@@ -201,10 +201,10 @@ export function productDetailTemplate(product) {
             <!-- Specifications -->
             <div class="flex flex-col gap-4 lg:gap-5">
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Specification</h2>
-              <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div class="w-full h-[1px] section-divider"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
                 ${product.specifications
-                  .map((spec) => `<p class="mb-0">${spec}</p>`)
+                  .map((spec) => `<p class="mb-0 stagger-item">${spec}</p>`)
                   .join('')}
               </div>
             </div>
@@ -212,10 +212,10 @@ export function productDetailTemplate(product) {
             <!-- Package -->
             <div class="flex flex-col gap-4 lg:gap-5">
               <h2 class="text-lg md:text-xl lg:text-[24px] font-bold text-white">Package</h2>
-              <div class="w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div class="w-full h-[1px] section-divider"></div>
               <div class="text-xs lg:text-[12px] text-white/50 leading-relaxed space-y-2">
                 ${product.package
-                  .map((item) => `<p class="mb-0">${item}</p>`)
+                  .map((item) => `<p class="mb-0 stagger-item">${item}</p>`)
                   .join('')}
               </div>
             </div>
