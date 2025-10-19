@@ -1,8 +1,7 @@
 /** @format */
 
 /**
- * Product Data - Sample products for demonstration
- * In production, this would come from an API
+ * SAMPLE
  */
 
 export const products = [

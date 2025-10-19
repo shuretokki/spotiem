@@ -76,9 +76,6 @@ export function showToast(message, type = 'success', duration = 3000) {
   });
 }
 
-/**
- * Convenience methods for different toast types
- */
 export const toast = {
   success: (message, duration) => showToast(message, 'success', duration),
   error: (message, duration) => showToast(message, 'error', duration),

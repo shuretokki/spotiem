@@ -95,46 +95,28 @@ function renderProductDetailPage(productId) {
     return;
   }
 
-  // Load product detail template
   appContent.innerHTML = productDetailTemplate(product);
 
-  // Initialize product detail functionality
   requestAnimationFrame(() => {
     initProductDetail(productId);
   });
 }
 
-/**
- * ====================================================================
- * APPLICATION INITIALIZATION
- * ====================================================================
- */
-
-/**
- * Initialize application
- */
 function initApp() {
-  // Initialize router
   initializeRouter();
 
-  // Initialize mobile menu
   if (mobileMenuInstance) {
     mobileMenuInstance.destroy();
   }
   mobileMenuInstance = new MobileMenu().init();
 
-  // Route to current path
   router.handleRoute(window.location.pathname);
 
-  // Hide loading screen
   hideLoadingScreen();
 
   console.log('✓ Spotiem initialized successfully');
 }
 
-/**
- * Hide loading screen with fade animation
- */
 function hideLoadingScreen() {
   const loadingScreen = document.getElementById('loading-screen');
 
@@ -154,13 +136,6 @@ function hideLoadingScreen() {
   }
 }
 
-/**
- * ====================================================================
- * STARTUP
- * ====================================================================
- */
-
-// Wait for page load then initialize
 window.addEventListener('load', () => {
   requestAnimationFrame(() => {
     setTimeout(() => {

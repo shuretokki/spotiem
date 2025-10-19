@@ -99,7 +99,7 @@ export function homeTemplate() {
 }
 
 /**
- * Product Detail Page Template
+ * Product Detail Page
  * @param {Object} product - Product data
  * @returns {string} HTML string for product detail page
  */
@@ -233,7 +233,7 @@ export function productDetailTemplate(product) {
 }
 
 /**
- * Loading Screen Template
+ * Loading Screen
  * @returns {string} HTML string for loading screen
  */
 export function loadingScreenTemplate() {

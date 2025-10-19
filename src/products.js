@@ -63,15 +63,12 @@ export function renderNewest() {
   const grid = document.getElementById('newest-grid');
   if (!grid) return;
 
-  // Remove skeletons
   grid.querySelectorAll('.skeleton-card').forEach((el) => el.remove());
 
-  // Render first 4 cards (visible on all screens)
   products.slice(0, 4).forEach((product) => {
     grid.appendChild(createProductCard(product, { layout: 'grid' }));
   });
 
-  // Render next 4 cards (desktop only)
   products.slice(4, 8).forEach((product) => {
     grid.appendChild(
       createProductCard(product, {
@@ -92,7 +89,6 @@ export function renderDiscover(category = 'All', append = false) {
   state.discover.category = category;
 
   if (!append) {
-    // Reset and fade out
     state.discover.displayCount = 8;
     grid.classList.add('fade-out');
 
@@ -109,7 +105,6 @@ export function renderDiscover(category = 'All', append = false) {
       updateSeeMoreButton(products.length);
     }, 200);
   } else {
-    // Load more products
     const startIndex = state.discover.displayCount;
     const endIndex = startIndex + 6;
     const newProducts = products.slice(startIndex, endIndex);
@@ -180,7 +175,6 @@ export function setupSeeMoreButton() {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
 
-  // Remove old listener if exists
   if (btn._clickHandler) {
     btn.removeEventListener('click', btn._clickHandler);
   }
@@ -218,7 +212,6 @@ export function setupScrollNavigation() {
     }, 150);
   };
 
-  // Remove old listeners if exist
   if (leftBtn._scrollHandler) {
     leftBtn.removeEventListener('click', leftBtn._scrollHandler);
   }

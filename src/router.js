@@ -62,7 +62,6 @@ class Router {
 
     for (let i = 0; i < patternParts.length; i++) {
       if (patternParts[i].startsWith(':')) {
-        // Extract parameter
         const paramName = patternParts[i].slice(1);
         params[paramName] = pathParts[i];
       } else if (patternParts[i] !== pathParts[i]) {
@@ -73,13 +72,9 @@ class Router {
     return params;
   }
 
-  /**
-   * Get current route parameters
-   */
   getParams() {
     return this.params;
   }
 }
 
-// Export singleton instance
 export const router = new Router();
