@@ -7,14 +7,14 @@ export class Carousel {
     this.isTransitioning = false;
     this.autoRotateInterval = null;
     this.observer = null;
-    
+
     this.config = {
       autoplayDelay: options.autoplayDelay || 5000,
       transitionDuration: options.transitionDuration || 700,
       threshold: options.threshold || 0.5,
-      ...options
+      ...options,
     };
-    
+
     this.touchStart = 0;
     this.touchEnd = 0;
   }
@@ -22,7 +22,7 @@ export class Carousel {
   init() {
     const banner = document.getElementById('banner-carousel');
     const indicatorsContainer = document.getElementById('banner-indicators');
-    
+
     if (!banner || !indicatorsContainer) return;
 
     this.removeSkeleton();
@@ -31,7 +31,7 @@ export class Carousel {
     this.setupIntersectionObserver(banner);
     this.renderIndicators(indicatorsContainer);
     this.preloadImages();
-    
+
     return this;
   }
 
@@ -42,10 +42,11 @@ export class Carousel {
 
   createSlides(container) {
     container.innerHTML = '';
-    
+
     const slidesContainer = document.createElement('div');
     slidesContainer.id = 'slides-container';
-    slidesContainer.className = 'flex transition-transform duration-700 ease-in-out h-full';
+    slidesContainer.className =
+      'flex transition-transform duration-700 ease-in-out h-full';
     slidesContainer.style.transform = 'translateX(0)';
 
     this.slides.forEach((slide, index) => {
@@ -90,14 +91,22 @@ export class Carousel {
   }
 
   setupTouchHandlers(element) {
-    element.addEventListener('touchstart', (e) => {
-      this.touchStart = e.changedTouches[0].screenX;
-    }, { passive: true });
+    element.addEventListener(
+      'touchstart',
+      (e) => {
+        this.touchStart = e.changedTouches[0].screenX;
+      },
+      { passive: true },
+    );
 
-    element.addEventListener('touchend', (e) => {
-      this.touchEnd = e.changedTouches[0].screenX;
-      this.handleSwipe();
-    }, { passive: true });
+    element.addEventListener(
+      'touchend',
+      (e) => {
+        this.touchEnd = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      },
+      { passive: true },
+    );
   }
 
   handleSwipe() {
@@ -116,22 +125,26 @@ export class Carousel {
   setupIntersectionObserver(element) {
     if (!('IntersectionObserver' in window)) return;
 
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.startAutoplay();
-        } else {
-          this.stopAutoplay();
-        }
-      });
-    }, { threshold: this.config.threshold });
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.startAutoplay();
+          } else {
+            this.stopAutoplay();
+          }
+        });
+      },
+      { threshold: this.config.threshold },
+    );
 
     this.observer.observe(element);
   }
 
   renderIndicators(container) {
     container.innerHTML = this.slides
-      .map((_, index) => `
+      .map(
+        (_, index) => `
         <button
           class="w-2 h-2 rounded-full transition-all duration-300 ${
             index === this.currentSlide
@@ -141,7 +154,8 @@ export class Carousel {
           data-slide="${index}"
           aria-label="Go to slide ${index + 1}"
         ></button>
-      `)
+      `,
+      )
       .join('');
 
     container.querySelectorAll('button').forEach((btn) => {
@@ -156,10 +170,12 @@ export class Carousel {
 
   preloadImages() {
     this.slides.slice(0, 2).forEach((slide) => {
-      [slide.imageMobile, slide.imageTablet, slide.imageDesktop].forEach(src => {
-        const img = new Image();
-        img.src = src;
-      });
+      [slide.imageMobile, slide.imageTablet, slide.imageDesktop].forEach(
+        (src) => {
+          const img = new Image();
+          img.src = src;
+        },
+      );
     });
   }
 
@@ -192,7 +208,8 @@ export class Carousel {
 
   prev() {
     if (this.isTransitioning) return;
-    this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+    this.currentSlide =
+      (this.currentSlide - 1 + this.slides.length) % this.slides.length;
     this.updatePosition();
     this.resetAutoplay();
   }

@@ -1,18 +1,6 @@
 /** @format */
 
-/**
- * Toast Notification System
- * Minimal, clean toast notifications matching Spotiem design
- */
-
-/**
- * Show a toast notification
- * @param {string} message - The message to display
- * @param {string} type - Type of toast: 'success', 'error', 'info', 'warning'
- * @param {number} duration - Duration in milliseconds (default: 3000)
- */
 export function showToast(message, type = 'success', duration = 3000) {
-  // Create toast container if it doesn't exist
   let container = document.getElementById('toast-container');
   if (!container) {
     container = document.createElement('div');
@@ -22,12 +10,10 @@ export function showToast(message, type = 'success', duration = 3000) {
     document.body.appendChild(container);
   }
 
-  // Create toast element
   const toast = document.createElement('div');
   toast.className =
     'toast-item pointer-events-auto transform translate-y-[200px] opacity-0 transition-all duration-300 ease-out';
 
-  // Get icon and color based on type
   const iconColors = {
     success: 'text-[#57B660]',
     error: 'text-red-500',
@@ -35,7 +21,6 @@ export function showToast(message, type = 'success', duration = 3000) {
     warning: 'text-yellow-500',
   };
 
-  // Get icon based on type
   const icons = {
     success: `<svg class="w-5 h-5 flex-shrink-0 ${iconColors.success}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -63,17 +48,13 @@ export function showToast(message, type = 'success', duration = 3000) {
     </div>
   `;
 
-  // Add to container
   container.appendChild(toast);
-
-  // Trigger animation after a brief delay (for CSS transition)
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       toast.classList.remove('translate-y-[200px]', 'opacity-0');
     });
   });
 
-  // Setup close button
   const closeBtn = toast.querySelector('.toast-close');
   const removeToast = () => {
     toast.classList.add('translate-y-[200px]', 'opacity-0');
@@ -81,7 +62,6 @@ export function showToast(message, type = 'success', duration = 3000) {
       if (toast.parentNode) {
         toast.remove();
       }
-      // Remove container if empty
       if (container.children.length === 0) {
         container.remove();
       }
@@ -90,10 +70,7 @@ export function showToast(message, type = 'success', duration = 3000) {
 
   closeBtn.addEventListener('click', removeToast);
 
-  // Auto-remove after duration
   const autoRemoveTimeout = setTimeout(removeToast, duration);
-
-  // Clear timeout if manually closed
   closeBtn.addEventListener('click', () => clearTimeout(autoRemoveTimeout), {
     once: true,
   });

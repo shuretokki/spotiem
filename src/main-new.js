@@ -1,5 +1,10 @@
 /** @format */
 
+/**
+ * SPOTIEM - Audio E-commerce SPA
+ * Modern, modular architecture with clean separation of concerns
+ */
+
 import './style.css';
 import { router } from './router.js';
 import { homeTemplate, productDetailTemplate } from './templates.js';
@@ -15,21 +20,37 @@ import {
 import { initProductDetail, getProduct } from './productDetail.js';
 import { BANNER_SLIDES, ANIMATIONS, LOADING } from './constants.js';
 
+// Global instances
 let carouselInstance = null;
 let mobileMenuInstance = null;
 
+/**
+ * ====================================================================
+ * ROUTER SETUP
+ * ====================================================================
+ */
+
+/**
+ * Initialize application router
+ */
 function initializeRouter() {
+  // Home route
   router.register('/', () => {
     renderHomePage();
   });
 
+  // Product detail route
   router.register('/product/:id', (params) => {
     renderProductDetailPage(params.id);
   });
 
+  // Setup SPA link interception
   setupLinkInterception();
 }
 
+/**
+ * Setup SPA link interception
+ */
 function setupLinkInterception() {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('.product-link, a[href^="/"]');
@@ -45,30 +66,47 @@ function setupLinkInterception() {
   });
 }
 
+/**
+ * ====================================================================
+ * PAGE RENDERING
+ * ====================================================================
+ */
+
+/**
+ * Render home page
+ */
 function renderHomePage() {
   const appContent = document.getElementById('app-content');
   if (!appContent) return;
 
+  // Load template
   appContent.innerHTML = homeTemplate();
 
+  // Initialize components
   requestAnimationFrame(() => {
     initHomeComponents();
   });
 }
 
+/**
+ * Initialize home page components
+ */
 function initHomeComponents() {
+  // Products
   renderNewest();
   renderDiscover();
   setupCategoryFilters();
   setupSeeMoreButton();
   setupScrollNavigation();
 
+  // Carousel
   if (carouselInstance) {
     carouselInstance.destroy();
   }
   carouselInstance = new Carousel(BANNER_SLIDES).init();
   setupCarouselButtons(carouselInstance);
 
+  // Start autoplay after render
   setTimeout(() => {
     if (carouselInstance) {
       carouselInstance.startAutoplay();
@@ -76,6 +114,9 @@ function initHomeComponents() {
   }, ANIMATIONS.NORMAL);
 }
 
+/**
+ * Render product detail page
+ */
 function renderProductDetailPage(productId) {
   const appContent = document.getElementById('app-content');
   if (!appContent) return;
@@ -83,6 +124,7 @@ function renderProductDetailPage(productId) {
   const product = getProduct(productId);
 
   if (!product) {
+    // Product not found
     appContent.innerHTML = `
       <div class="flex flex-col items-center justify-center py-20 px-4">
         <h1 class="text-4xl font-bold text-white mb-4">Product Not Found</h1>

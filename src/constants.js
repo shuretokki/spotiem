@@ -2,31 +2,23 @@
 
 export const ANIMATIONS = {
   FAST: 150,
-  NORMAL: 300,    // Standard transitions (fades, slides)
-  SLOW: 700,      // Complex animations (carousels, page transitions)
-  STAGGER: 50,    // Per-item delay for staggered animations
+  NORMAL: 300,
+  SLOW: 700,
+  STAGGER: 50,
 };
 
-// Colors
 export const COLORS = {
-  PRIMARY: '#57B660',      // Green accent
-  PRIMARY_HOVER: '#4da555', // Green hover
-  BACKGROUND: '#181414',   // Dark background
-  TEXT_PRIMARY: '#FFFFFF', // White text
-  TEXT_SECONDARY: '#9CA3AF', // Gray text
-  BORDER: '#4B5563',       // Gray border
 };
 
 // Breakpoints (matches Tailwind)
 export const BREAKPOINTS = {
-  SM: 640,   // Mobile
-  MD: 768,   // Tablet
-  LG: 1024,  // Desktop
-  XL: 1280,  // Large desktop
-  MAX: 1440, // Max container width
+  SM: 640,
+  MD: 768,
+  LG: 1024,
+  XL: 1280,
+  MAX: 1440,
 };
 
-// Banner carousel configuration
 export const CAROUSEL_CONFIG = {
   AUTOPLAY_DELAY: 5000,
   TRANSITION_DURATION: 700,
@@ -83,10 +75,13 @@ export const ROUTES = {
 
 // CSS Classes (reusable Tailwind combinations)
 export const CSS_CLASSES = {
-  BUTTON_PRIMARY: 'px-6 py-2 bg-[#57B660] rounded-full text-black text-sm font-medium hover:bg-[#4da555] transition-all',
-  BUTTON_SECONDARY: 'px-6 py-2 border border-white rounded-full text-sm hover:bg-white hover:text-[#181414] transition-all',
+  BUTTON_PRIMARY:
+    'px-6 py-2 bg-[#57B660] rounded-full text-black text-sm font-medium hover:bg-[#4da555] transition-all',
+  BUTTON_SECONDARY:
+    'px-6 py-2 border border-white rounded-full text-sm hover:bg-white hover:text-[#181414] transition-all',
   CARD: 'aspect-square bg-transparent rounded-2xl overflow-hidden transition-all duration-300',
-  INPUT: 'w-full bg-transparent border border-gray-600 rounded-full px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors',
+  INPUT:
+    'w-full bg-transparent border border-gray-600 rounded-full px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors',
   FADE_IN: 'opacity-0 translate-y-2 transition-all duration-300',
   FADE_OUT: 'opacity-100 translate-y-0 transition-all duration-300',
 };

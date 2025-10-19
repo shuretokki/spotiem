@@ -6,24 +6,25 @@ const state = {
   discover: {
     category: 'All',
     displayCount: 8,
-    isLoading: false
-  }
+    isLoading: false,
+  },
 };
 
 export function createProductCard(product, options = {}) {
   const {
     layout = 'grid', // 'grid' or 'flex'
     isDesktopOnly = false,
-    isMobileCentered = false
+    isMobileCentered = false,
   } = options;
 
-  const wrapperClasses = layout === 'flex'
-    ? 'w-full lg:w-[calc(25%-18px)]'
-    : isMobileCentered
-    ? 'md:hidden col-span-2 max-w-[188px] mx-auto'
-    : isDesktopOnly
-    ? 'hidden lg:block w-full lg:min-w-[168px] lg:max-w-[168px] lg:flex-shrink-0'
-    : 'w-full lg:min-w-[168px] lg:max-w-[168px] lg:flex-shrink-0';
+  const wrapperClasses =
+    layout === 'flex'
+      ? 'w-full lg:w-[calc(25%-18px)]'
+      : isMobileCentered
+      ? 'md:hidden col-span-2 max-w-[188px] mx-auto'
+      : isDesktopOnly
+      ? 'hidden lg:block w-full lg:min-w-[168px] lg:max-w-[168px] lg:flex-shrink-0'
+      : 'w-full lg:min-w-[168px] lg:max-w-[168px] lg:flex-shrink-0';
 
   const cardWrapper = document.createElement('div');
   cardWrapper.className = wrapperClasses;
@@ -63,7 +64,7 @@ export function renderNewest() {
   if (!grid) return;
 
   // Remove skeletons
-  grid.querySelectorAll('.skeleton-card').forEach(el => el.remove());
+  grid.querySelectorAll('.skeleton-card').forEach((el) => el.remove());
 
   // Render first 4 cards (visible on all screens)
   products.slice(0, 4).forEach((product) => {
@@ -72,10 +73,12 @@ export function renderNewest() {
 
   // Render next 4 cards (desktop only)
   products.slice(4, 8).forEach((product) => {
-    grid.appendChild(createProductCard(product, { 
-      layout: 'grid',
-      isDesktopOnly: true 
-    }));
+    grid.appendChild(
+      createProductCard(product, {
+        layout: 'grid',
+        isDesktopOnly: true,
+      }),
+    );
   });
 }
 
@@ -83,7 +86,7 @@ export function renderDiscover(category = 'All', append = false) {
   const products = getProductsByCategory(category);
   const grid = document.getElementById('discover-grid');
   const seeMoreBtn = document.getElementById('see-more-btn');
-  
+
   if (!grid) return;
 
   state.discover.category = category;
@@ -92,10 +95,10 @@ export function renderDiscover(category = 'All', append = false) {
     // Reset and fade out
     state.discover.displayCount = 8;
     grid.classList.add('fade-out');
-    
+
     setTimeout(() => {
       grid.innerHTML = '';
-      
+
       const initialCount = Math.min(8, products.length);
       products.slice(0, initialCount).forEach((product) => {
         grid.appendChild(createProductCard(product, { layout: 'flex' }));
@@ -131,7 +134,10 @@ function updateSeeMoreButton(totalProducts) {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
 
-  if (state.discover.category === 'All' && state.discover.displayCount < totalProducts) {
+  if (
+    state.discover.category === 'All' &&
+    state.discover.displayCount < totalProducts
+  ) {
     btn.style.display = 'block';
   } else {
     btn.style.display = 'none';
@@ -155,9 +161,11 @@ export function setupCategoryFilters() {
 
     container.querySelectorAll('.category-filter').forEach((btn) => {
       if (btn === button) {
-        btn.className = 'category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-bold transition-all hover:bg-[#4da555]';
+        btn.className =
+          'category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-bold transition-all hover:bg-[#4da555]';
       } else {
-        btn.className = 'category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10';
+        btn.className =
+          'category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10';
       }
     });
 
@@ -197,13 +205,17 @@ export function setupScrollNavigation() {
   const scrollLeft = () => {
     grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     leftBtn.style.transform = 'scale(0.9)';
-    setTimeout(() => { leftBtn.style.transform = ''; }, 150);
+    setTimeout(() => {
+      leftBtn.style.transform = '';
+    }, 150);
   };
 
   const scrollRight = () => {
     grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     rightBtn.style.transform = 'scale(0.9)';
-    setTimeout(() => { rightBtn.style.transform = ''; }, 150);
+    setTimeout(() => {
+      rightBtn.style.transform = '';
+    }, 150);
   };
 
   // Remove old listeners if exist

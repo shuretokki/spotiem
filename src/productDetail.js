@@ -9,7 +9,7 @@ export function initProductDetail(productId) {
 
   setupThumbnailGallery();
   setupProductButtons(product);
-  
+
   return product;
 }
 
@@ -41,7 +41,7 @@ function setupProductButtons(product) {
   if (wishlistBtn) {
     const newWishlistBtn = wishlistBtn.cloneNode(true);
     wishlistBtn.parentNode.replaceChild(newWishlistBtn, wishlistBtn);
-    
+
     newWishlistBtn.addEventListener('click', () => {
       handleAddToWishlist(product);
     });
@@ -50,7 +50,7 @@ function setupProductButtons(product) {
   if (cartBtn) {
     const newCartBtn = cartBtn.cloneNode(true);
     cartBtn.parentNode.replaceChild(newCartBtn, cartBtn);
-    
+
     newCartBtn.addEventListener('click', () => {
       handleAddToCart(product);
     });
