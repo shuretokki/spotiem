@@ -1,5 +1,7 @@
 /** @format */
 
+import { BASE_URL } from './constants';
+
 /**
  * @returns {string} HTML string for home page
  */
@@ -57,10 +59,6 @@ export function homeTemplate() {
       </div>
 
       <div id="newest-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:flex lg:gap-4 lg:overflow-x-auto lg:scroll-smooth scrollbar-hide pb-2">
-        <div class="skeleton-card aspect-square rounded-2xl"></div>
-        <div class="skeleton-card aspect-square rounded-2xl"></div>
-        <div class="skeleton-card aspect-square rounded-2xl"></div>
-        <div class="skeleton-card aspect-square rounded-2xl"></div>
       </div>
     </section>
 
@@ -69,7 +67,7 @@ export function homeTemplate() {
       <h2 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Discover</h2>
 
       <div id="category-filters" class="flex gap-2 flex-wrap mb-4 md:mb-5">
-        <button data-category="All" class="category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-bold transition-all hover:bg-[#4da555]">All</button>
+        <button data-category="All" class="category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-medium transition-all hover:bg-[#4da555]">All</button>
         <button data-category="IEM" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">IEM</button>
         <button data-category="Headphone" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">Headphone</button>
         <button data-category="Eartips" class="category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10">Eartips</button>
@@ -102,19 +100,16 @@ export function productDetailTemplate(product) {
     <section class="px-4 md:px-8 lg:px-32 py-4 md:py-8">
       <div class="flex flex-col lg:flex-row gap-5 lg:gap-5 items-start w-full max-w-[1920px] mx-auto">
 
-        <!-- Left: Product Images -->
         <div class="w-full lg:w-1/2 lg:max-w-[700px] flex flex-col gap-6 lg:gap-10 flex-shrink-0 fade-in-up">
-          <!-- Featured Image -->
           <div class="w-full aspect-square rounded-2xl lg:rounded-[32px] overflow-hidden bg-[#d9d9d9]">
             <img
               id="featured-image"
-              src="${product.images[0]}"
+              src="${BASE_URL}${product.images[0]}"
               alt="${product.title}"
               class="w-full h-full object-cover"
             />
           </div>
 
-          <!-- Thumbnail Gallery -->
           <div id="thumbnail-gallery" class="flex gap-3 lg:gap-5 items-center justify-center w-full overflow-x-auto scrollbar-hide fade-in-up">
             ${product.images
               .map(
@@ -126,7 +121,7 @@ export function productDetailTemplate(product) {
                 data-index="${index}"
               >
                 <img
-                  src="${img}"
+                  src="${BASE_URL}${img}"
                   alt="${product.title} thumbnail ${index + 1}"
                   class="w-full h-full object-cover"
                 />

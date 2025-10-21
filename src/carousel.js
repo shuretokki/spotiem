@@ -84,7 +84,7 @@ export class Carousel {
     const img = document.createElement('img');
     img.src = slide.imageDesktop;
     img.alt = slide.title;
-    img.className = `w-full h-full object-contain bg-[${COLORS.BACKGROUND}]`;
+    img.className = `w-full h-full object-contain bg-[#080808] rounded-2xl`;
     img.loading = index === 0 ? 'eager' : 'lazy';
     picture.appendChild(img);
 

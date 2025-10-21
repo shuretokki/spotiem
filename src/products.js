@@ -1,7 +1,7 @@
 /** @format */
 
-import { getAllProducts, getProductsByCategory } from './productData.js';
-import { COLORS, ANIMATIONS, PRODUCTS_CONFIG } from './constants.js';
+import { getAllProducts, getProductsByCategory } from './productData';
+import { BASE_URL, COLORS, ANIMATIONS, PRODUCTS_CONFIG } from './constants';
 
 const state = {
   discover: {
@@ -34,7 +34,7 @@ export const createProductCard = (product, options = {}) => {
     <a href="/product/${product.id}" class="product-link block group/card rounded-2xl overflow-hidden transition-all duration-[${ANIMATIONS.NORMAL}ms] cursor-pointer">
       <div class="aspect-square bg-transparent flex items-center justify-center overflow-hidden rounded-2xl relative">
         <img
-          src="${product.image}"
+          src="${BASE_URL}${product.image}"
           alt="${product.title}"
           loading="lazy"
           class="w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover/card:scale-110"

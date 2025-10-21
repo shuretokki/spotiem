@@ -11,12 +11,12 @@ export const products = [
     subtitle: '2DD + 4BA + 4Planar In-ear Monitor',
     artist: 'Moondrop',
     category: 'IEM',
-    price: 'Rp. 10,000,000.00',
-    image: '/product-detail/moondrop-psyche.webp',
+    price: 'Rp. 34,999,000.00',
+    image: 'product-detail/moondrop-psyche.webp',
     images: [
-      '/product-detail/moondrop-psyche-1.webp',
-      '/product-detail/moondrop-psyche-2.webp',
-      '/product-detail/moondrop-psyche-3.webp',
+      'product-detail/moondrop-psyche.webp',
+      'product-detail/moondrop-psyche-1.webp',
+      'product-detail/moondrop-psyche-2.webp',
     ],
     features: [
       'Hand-crafted MITSUKIYUKI faceplate',

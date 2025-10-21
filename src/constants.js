@@ -1,5 +1,7 @@
 /** @format */
 
+export const BASE_URL = import.meta.env.BASE_URL;
+
 export const ANIMATIONS = {
   FAST: 150,
   NORMAL: 300,
@@ -58,23 +60,23 @@ export const TOAST_CONFIG = {
 export const BANNER_SLIDES = [
   {
     title: 'Banner 1',
-    subtitle: 'Discover the finest sound quality',
-    imageDesktop: '/Banner L.webp',
-    imageTablet: '/Banner M.webp',
-    imageMobile: '/Banner S.webp',
+    subtitle: 'Banner',
+    imageDesktop: 'banner.webp',
+    imageTablet: 'banner.webp',
+    imageMobile: 'banner.webp',
   },
   {
     title: 'Banner 2',
-    subtitle: 'Check out our newest products',
-    imageDesktop: '/banner-2-desktop.webp',
-    imageTablet: '/banner-2-tablet.webp',
-    imageMobile: '/banner-2-mobile.webp',
+    subtitle: 'Banner',
+    imageDesktop: 'banner.webp',
+    imageTablet: 'banner.webp',
+    imageMobile: 'banner.webp',
   },
   {
     title: 'Banner 3',
-    subtitle: 'Limited time deals on premium gear',
-    imageDesktop: '/banner-3-desktop.webp',
-    imageTablet: '/banner-3-tablet.webp',
-    imageMobile: '/banner-3-mobile.webp',
+    subtitle: 'Banner',
+    imageDesktop: 'banner.webp',
+    imageTablet: 'banner.webp',
+    imageMobile: 'banner.webp',
   },
 ];
