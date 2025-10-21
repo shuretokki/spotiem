@@ -158,14 +158,14 @@ export function productDetailTemplate(product) {
 
           <!-- Price & Buttons -->
           <div class="flex flex-col items-center mb-6 lg:mb-10">
-            <p class="text-lg md:text-xl lg:text-[18px] font-bold text-[#57B660] mb-4">
+            <p class="text-lg md:text-xl lg:text-2xl font-bold text-[#57B660] mb-4">
               ${product.price}
             </p>
 
             <div class="flex flex-col gap-4 lg:gap-5 w-full">
               <button
                 id="add-to-wishlist"
-                class="w-full py-3 lg:py-[15.536px] px-10 border border-white rounded-full text-white text-xs lg:text-[12px] font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 group"
+                class="w-full py-3 lg:py-[15.536px] px-10 border border-white rounded-full text-white text-base md:text-md lg:text-lg font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2 group"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:scale-110">
                   <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -175,7 +175,7 @@ export function productDetailTemplate(product) {
 
               <button
                 id="add-to-cart"
-                class="w-full py-3 lg:py-[15.536px] px-10 bg-[#57B660] rounded-full text-[#181414] text-xs lg:text-[12px] font-bold hover:bg-[#4da555] transition-all flex items-center justify-center gap-2 group"
+                class="w-full py-3 lg:py-[15.536px] px-10 bg-[#57B660] rounded-full text-[#181414] text-base md:text-md lg:text-lg font-bold hover:bg-[#4da555] transition-all flex items-center justify-center gap-2 group"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:scale-110">
                   <circle cx="9" cy="21" r="1"></circle>

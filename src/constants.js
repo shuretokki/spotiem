@@ -39,8 +39,8 @@ export const LOADING = {
 };
 
 export const TOAST_CONFIG = {
-  DURATION: 3000,
-  REMOVE_DELAY: 300,
+  DURATION: 1500,
+  REMOVE_DELAY: 200,
   ICONS: {
     success: '✓',
     error: '✕',
@@ -57,21 +57,21 @@ export const TOAST_CONFIG = {
 
 export const BANNER_SLIDES = [
   {
-    title: 'Premium Audio Collection',
+    title: 'Banner 1',
     subtitle: 'Discover the finest sound quality',
     imageDesktop: '/Banner L.webp',
     imageTablet: '/Banner M.webp',
     imageMobile: '/Banner S.webp',
   },
   {
-    title: 'Latest Arrivals',
+    title: 'Banner 2',
     subtitle: 'Check out our newest products',
     imageDesktop: '/banner-2-desktop.webp',
     imageTablet: '/banner-2-tablet.webp',
     imageMobile: '/banner-2-mobile.webp',
   },
   {
-    title: 'Special Offers',
+    title: 'Banner 3',
     subtitle: 'Limited time deals on premium gear',
     imageDesktop: '/banner-3-desktop.webp',
     imageTablet: '/banner-3-tablet.webp',
