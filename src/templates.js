@@ -1,11 +1,6 @@
 /** @format */
 
 /**
- * Reusable
- */
-
-/**
- * Home Page
  * @returns {string} HTML string for home page
  */
 export function homeTemplate() {
@@ -99,7 +94,6 @@ export function homeTemplate() {
 }
 
 /**
- * Product Detail Page
  * @param {Object} product - Product data
  * @returns {string} HTML string for product detail page
  */
@@ -233,7 +227,6 @@ export function productDetailTemplate(product) {
 }
 
 /**
- * Loading Screen
  * @returns {string} HTML string for loading screen
  */
 export function loadingScreenTemplate() {

@@ -93,8 +93,6 @@ const initApp = () => {
 
   router.handleRoute(window.location.pathname);
   hideLoadingScreen();
-
-  console.log('✓ Spotiem initialized successfully');
 };
 
 const hideLoadingScreen = () => {
