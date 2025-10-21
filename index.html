@@ -80,7 +80,7 @@
         <!-- CONTENT: NAVBAR:LOGO -->
         <a href="/" class="product-link flex gap-1 items-center shrink-0 group">
           <img
-            src="/ac6ad4d6845d01988c43714cfe8ad2cff6ae165f.svg"
+            src="/brand-logo.svg"
             alt="Spotiem Logo"
             class="w-[95.52px] max-h-[17.781px] h-auto transition-transform group-hover:scale-105"
           />
@@ -242,17 +242,18 @@
               placeholder="Search"
               class="w-full bg-transparent border border-gray-600 rounded-full px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors"
             />
-            <!-- CONTENT: SEARCH ICON (SVG, ALTERNATIVE STYLE) -->
             <svg
               class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
               fill="none"
-              stroke="white"
-              stroke-width="2"
+              stroke="currentColor"
               viewBox="0 0 24 24"
-              aria-label="Search"
             >
-              <circle cx="11" cy="11" r="7" />
-              <line x1="16.5" y1="16.5" x2="21" y2="21" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
             </svg>
           </div>
         </div>
@@ -262,22 +263,16 @@
           <button
             class="w-12 h-12 flex items-center justify-center hover:opacity-80 transition-opacity"
           >
-            <!-- CONTENT: SEARCH ICON (SVG, ALTERNATIVE STYLE) -->
-            <svg
+            <img
+              src="/search-icon.svg"
+              alt="Search"
+              loading="lazy"
               class="w-[18px] h-[18px]"
-              fill="none"
-              stroke="white"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              aria-label="Search"
-            >
-              <circle cx="11" cy="11" r="9" />
-              <line x1="16.5" y1="16.5" x2="21" y2="21" />
-            </svg>
+            />
           </button>
         </div>
 
-        <!-- SUBSECTION: NAVBAR/DESKTOP ACTIONS -->
+        <!-- SUBSECTION: DESKTOP ACTIONS -->
         <div class="hidden lg:flex items-center gap-3">
           <!-- CONTENT: WISHLIST BUTTON -->
           <button
@@ -319,15 +314,21 @@
           </button>
         </div>
 
-        <!-- SUBSECTION: NAVBAR/MENU ICON -->
+        <!-- SUBSECTION: MENU ICON -->
         <button
           id="hamburger-btn"
           class="hamburger-btn lg:hidden w-10 h-10 hover:opacity-80 transition-opacity flex flex-col items-center justify-center gap-[6px] relative"
           aria-label="Toggle menu"
         >
-          <span class="hamburger-line w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="hamburger-line w-6 h-0.5 bg-white rounded-full"></span>
-          <span class="hamburger-line w-6 h-0.5 bg-white rounded-full"></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-gray-400/80 rounded-full"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-gray-400/80 rounded-full"
+          ></span>
+          <span
+            class="hamburger-line w-6 h-0.5 bg-gray-400/80 rounded-full"
+          ></span>
         </button>
       </nav>
 
@@ -339,7 +340,7 @@
             class="flex items-center justify-between px-4 h-16 md:h-[76px] border-b border-gray-800"
           >
             <img
-              src="/ac6ad4d6845d01988c43714cfe8ad2cff6ae165f.svg"
+              src="/brand-logo.svg"
               alt="Spotiem Logo"
               class="w-[95.52px] max-h-[17.781px] h-auto"
             />
@@ -592,7 +593,7 @@
             class="hidden md:flex lg:col-span-2 items-center md:justify-start lg:justify-end md:col-span-2"
           >
             <img
-              src="/ac6ad4d6845d01988c43714cfe8ad2cff6ae165f.svg"
+              src="/brand-logo.svg"
               alt="Spotiem Logo"
               loading="lazy"
               class="w-auto h-5 lg:h-6 max-w-[120px] shrink-0"
