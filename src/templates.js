@@ -110,7 +110,7 @@ export function productDetailTemplate(product) {
             />
           </div>
 
-          <div id="thumbnail-gallery" class="flex gap-3 lg:gap-5 items-center justify-center w-full overflow-x-auto scrollbar-hide fade-in-up">
+          <div id="thumbnail-gallery" class="flex gap-3 lg:gap-5 w-full overflow-x-auto scrollbar-hide fade-in-up">
             ${product.images
               .map(
                 (img, index) => `

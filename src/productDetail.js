@@ -4,6 +4,10 @@ import { getProductById } from './productData.js';
 import { toast } from './toast.js';
 import { COLORS } from './constants.js';
 
+/**
+ * @param {string} productId - The product ID to initialize details for
+ * @returns {Object|null} The product object or null if not found
+ */
 export const initProductDetail = (productId) => {
   const product = getProductById(productId);
   if (!product) return null;
@@ -14,6 +18,9 @@ export const initProductDetail = (productId) => {
   return product;
 };
 
+/**
+ * @returns {void}
+ */
 const setupThumbnailGallery = () => {
   const thumbnails = document.querySelectorAll('.thumbnail-btn');
   const featuredImage = document.getElementById('featured-image');
@@ -35,6 +42,10 @@ const setupThumbnailGallery = () => {
   });
 };
 
+/**
+ * @param {Object} product - The product object
+ * @returns {void}
+ */
 const setupProductButtons = (product) => {
   const wishlistBtn = document.getElementById('add-to-wishlist');
   const cartBtn = document.getElementById('add-to-cart');
@@ -54,14 +65,26 @@ const setupProductButtons = (product) => {
   }
 };
 
+/**
+ * @param {Object} product - The product object
+ * @returns {void}
+ */
 const handleAddToWishlist = (product) => {
   // TODO: Implement localStorage wishlist
   toast.success(`${product.title} added to wishlist!`);
 };
 
+/**
+ * @param {Object} product - The product object
+ * @returns {void}
+ */
 const handleAddToCart = (product) => {
   // TODO: Implement localStorage cart
   toast.success(`${product.title} added to cart!`);
 };
 
+/**
+ * @param {string} productId - The product ID
+ * @returns {Object|null} The product object or null if not found
+ */
 export const getProduct = (productId) => getProductById(productId);
