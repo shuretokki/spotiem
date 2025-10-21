@@ -3,6 +3,7 @@
 import './style.css';
 import { router } from './router.js';
 import { homeTemplate, productDetailTemplate } from './templates.js';
+import { contactTemplate, setupContactForm } from './contact.js';
 import { Carousel, setupCarouselButtons } from './carousel.js';
 import { MobileMenu } from './mobileMenu.js';
 import {
@@ -21,6 +22,7 @@ let mobileMenuInstance = null;
 const initializeRouter = () => {
   router.register('/', renderHomePage);
   router.register('/product/:id', ({ id }) => renderProductDetailPage(id));
+  router.register('/contact', renderContactPage);
   setupLinkInterception();
 };
 
@@ -40,11 +42,10 @@ const setupLinkInterception = () => {
 };
 
 const renderHomePage = () => {
-  const appContent = document.getElementById('app-content');
+  const appContent = document.querySelector('app-content');
   if (!appContent) return;
 
   appContent.innerHTML = homeTemplate();
-
   requestAnimationFrame(() => initHomeComponents());
 };
 
@@ -62,8 +63,16 @@ const initHomeComponents = () => {
   setTimeout(() => carouselInstance?.startAutoplay(), ANIMATIONS.NORMAL);
 };
 
+const renderContactPage = () => {
+  const appContent = document.querySelector('app-content');
+  if (!appContent) return;
+
+  appContent.innerHTML = contactTemplate();
+  requestAnimationFrame(() => setupContactForm());
+};
+
 const renderProductDetailPage = (productId) => {
-  const appContent = document.getElementById('app-content');
+  const appContent = document.querySelector('app-content');
   if (!appContent) return;
 
   const product = getProduct(productId);

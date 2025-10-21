@@ -51,7 +51,9 @@ class Router {
       this.#routes.get('/')?.({});
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
   }
 
   #matchRoute(pattern, path) {

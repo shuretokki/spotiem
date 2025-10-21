@@ -11,9 +11,9 @@ const state = {
   },
 };
 
-export function createProductCard(product, options = {}) {
+export const createProductCard = (product, options = {}) => {
   const {
-    layout = 'grid', // 'grid' or 'flex'
+    layout = 'grid',
     isDesktopOnly = false,
     isMobileCentered = false,
   } = options;
@@ -57,14 +57,12 @@ export function createProductCard(product, options = {}) {
   `;
 
   return cardWrapper;
-}
+};
 
-export function renderNewest() {
+export const renderNewest = () => {
   const products = getAllProducts();
   const grid = document.getElementById('newest-grid');
   if (!grid) return;
-
-  grid.querySelectorAll('.skeleton-card').forEach((el) => el.remove());
 
   products.slice(0, PRODUCTS_CONFIG.NEWEST_VISIBLE).forEach((product) => {
     grid.appendChild(createProductCard(product, { layout: 'grid' }));
@@ -80,9 +78,9 @@ export function renderNewest() {
         }),
       );
     });
-}
+};
 
-export function renderDiscover(category = 'All', append = false) {
+export const renderDiscover = (category = 'All', append = false) => {
   const products = getProductsByCategory(category);
   const grid = document.getElementById('discover-grid');
   const seeMoreBtn = document.getElementById('see-more-btn');
@@ -129,9 +127,9 @@ export function renderDiscover(category = 'All', append = false) {
     state.discover.displayCount += newProducts.length;
     updateSeeMoreButton(products.length);
   }
-}
+};
 
-function updateSeeMoreButton(totalProducts) {
+const updateSeeMoreButton = (totalProducts) => {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
 
@@ -143,9 +141,9 @@ function updateSeeMoreButton(totalProducts) {
   } else {
     btn.style.display = 'none';
   }
-}
+};
 
-export function setupCategoryFilters() {
+export const setupCategoryFilters = () => {
   const container = document.getElementById('category-filters');
   if (!container) return;
 
@@ -174,9 +172,9 @@ export function setupCategoryFilters() {
 
   container._filterHandler = handler;
   container.addEventListener('click', handler);
-}
+};
 
-export function setupSeeMoreButton() {
+export const setupSeeMoreButton = () => {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
 
@@ -190,9 +188,9 @@ export function setupSeeMoreButton() {
 
   btn._clickHandler = handler;
   btn.addEventListener('click', handler);
-}
+};
 
-export function setupScrollNavigation() {
+export const setupScrollNavigation = () => {
   const leftBtn = document.getElementById('newest-scroll-left');
   const rightBtn = document.getElementById('newest-scroll-right');
   const grid = document.getElementById('newest-grid');
@@ -240,8 +238,8 @@ export function setupScrollNavigation() {
 
   grid.addEventListener('scroll', updateArrowVisibility);
   setTimeout(updateArrowVisibility, 500);
-}
+};
 
-export function getDiscoverState() {
+export const getDiscoverState = () => {
   return { ...state.discover };
-}
+};
