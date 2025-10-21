@@ -157,7 +157,7 @@ export function setupCategoryFilters() {
     container.querySelectorAll('.category-filter').forEach((btn) => {
       if (btn === button) {
         btn.className =
-          'category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-bold transition-all hover:bg-[#4da555]';
+          'category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-medium transition-all hover:bg-[#4da555]';
       } else {
         btn.className =
           'category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10';

@@ -10,6 +10,7 @@ body {
   background-color: #181414;
   overflow-x: hidden;
 }
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
@@ -416,4 +417,12 @@ body.menu-open {
 
 .transition-fast {
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-filter {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.category-filter:active {
+  opacity: 0.8;
 }

@@ -17,7 +17,9 @@ class Router {
   }
 
   navigate(path, pushState = true) {
-    const fullPath = path.startsWith(this.base) ? path : this.base + path.slice(1);
+    const fullPath = path.startsWith(this.base)
+      ? path
+      : this.base + path.slice(1);
     if (pushState) {
       window.history.pushState({}, '', fullPath);
     }
@@ -26,7 +28,9 @@ class Router {
 
   handleRoute(path) {
     let matched = false;
-    const relativePath = path.startsWith(this.base) ? path.slice(this.base.length - 1) : path;
+    const relativePath = path.startsWith(this.base)
+      ? path.slice(this.base.length - 1)
+      : path;
 
     for (const [pattern, handler] of this.routes) {
       const params = this.matchRoute(pattern, relativePath);
