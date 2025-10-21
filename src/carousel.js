@@ -1,5 +1,7 @@
 /** @format */
 
+import { CAROUSEL_CONFIG, COLORS, ANIMATIONS } from './constants.js';
+
 export class Carousel {
   constructor(slides, options = {}) {
     this.slides = slides;
@@ -9,9 +11,10 @@ export class Carousel {
     this.observer = null;
 
     this.config = {
-      autoplayDelay: options.autoplayDelay || 5000,
-      transitionDuration: options.transitionDuration || 700,
-      threshold: options.threshold || 0.5,
+      autoplayDelay: options.autoplayDelay || CAROUSEL_CONFIG.AUTOPLAY_DELAY,
+      transitionDuration:
+        options.transitionDuration || CAROUSEL_CONFIG.TRANSITION_DURATION,
+      threshold: options.threshold || CAROUSEL_CONFIG.INTERSECTION_THRESHOLD,
       ...options,
     };
 
@@ -45,8 +48,7 @@ export class Carousel {
 
     const slidesContainer = document.createElement('div');
     slidesContainer.id = 'slides-container';
-    slidesContainer.className =
-      'flex transition-transform duration-700 ease-in-out h-full';
+    slidesContainer.className = `flex transition-transform duration-[${CAROUSEL_CONFIG.TRANSITION_DURATION}ms] ease-in-out h-full`;
     slidesContainer.style.transform = 'translateX(0)';
 
     this.slides.forEach((slide, index) => {
@@ -82,7 +84,7 @@ export class Carousel {
     const img = document.createElement('img');
     img.src = slide.imageDesktop;
     img.alt = slide.title;
-    img.className = 'w-full h-full object-contain bg-[#181414]';
+    img.className = `w-full h-full object-contain bg-[${COLORS.BACKGROUND}]`;
     img.loading = index === 0 ? 'eager' : 'lazy';
     picture.appendChild(img);
 
@@ -110,7 +112,7 @@ export class Carousel {
   }
 
   handleSwipe() {
-    const swipeThreshold = 50;
+    const swipeThreshold = CAROUSEL_CONFIG.SWIPE_THRESHOLD;
     const diff = this.touchStart - this.touchEnd;
 
     if (Math.abs(diff) < swipeThreshold) return;
@@ -146,11 +148,13 @@ export class Carousel {
       .map(
         (_, index) => `
         <button
-          class="w-2 h-2 rounded-full transition-all duration-300 ${
-            index === this.currentSlide
-              ? 'bg-[#57B660] w-6'
-              : 'bg-white/50 hover:bg-white/80'
-          }"
+          class="w-2 h-2 rounded-full transition-all duration-[${
+            ANIMATIONS.NORMAL
+          }ms] ${
+          index === this.currentSlide
+            ? `bg-[${COLORS.PRIMARY}] w-6`
+            : 'bg-white/50 hover:bg-white/80'
+        }"
           data-slide="${index}"
           aria-label="Go to slide ${index + 1}"
         ></button>

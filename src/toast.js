@@ -1,6 +1,12 @@
 /** @format */
 
-export function showToast(message, type = 'success', duration = 3000) {
+import { TOAST_CONFIG, COLORS, ANIMATIONS } from './constants.js';
+
+export function showToast(
+  message,
+  type = 'success',
+  duration = TOAST_CONFIG.DURATION,
+) {
   let container = document.getElementById('toast-container');
   if (!container) {
     container = document.createElement('div');
@@ -11,14 +17,13 @@ export function showToast(message, type = 'success', duration = 3000) {
   }
 
   const toast = document.createElement('div');
-  toast.className =
-    'toast-item pointer-events-auto transform translate-y-[200px] opacity-0 transition-all duration-300 ease-out';
+  toast.className = `toast-item pointer-events-auto transform translate-y-[200px] opacity-0 transition-all duration-[${ANIMATIONS.NORMAL}ms] ease-out`;
 
   const iconColors = {
-    success: 'text-[#57B660]',
-    error: 'text-red-500',
-    info: 'text-blue-500',
-    warning: 'text-yellow-500',
+    success: `text-[${COLORS.PRIMARY}]`,
+    error: `text-[${COLORS.ERROR}]`,
+    info: `text-[${COLORS.INFO}]`,
+    warning: `text-[${COLORS.WARNING}]`,
   };
 
   const icons = {
@@ -65,7 +70,7 @@ export function showToast(message, type = 'success', duration = 3000) {
       if (container.children.length === 0) {
         container.remove();
       }
-    }, 300);
+    }, TOAST_CONFIG.REMOVE_DELAY);
   };
 
   closeBtn.addEventListener('click', removeToast);

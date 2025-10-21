@@ -1,11 +1,12 @@
 /** @format */
 
 import { getAllProducts, getProductsByCategory } from './productData.js';
+import { COLORS, ANIMATIONS, PRODUCTS_CONFIG } from './constants.js';
 
 const state = {
   discover: {
     category: 'All',
-    displayCount: 8,
+    displayCount: PRODUCTS_CONFIG.DISCOVER_INITIAL,
     isLoading: false,
   },
 };
@@ -30,7 +31,7 @@ export function createProductCard(product, options = {}) {
   cardWrapper.className = wrapperClasses;
 
   cardWrapper.innerHTML = `
-    <a href="/product/${product.id}" class="product-link block group/card rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer">
+    <a href="/product/${product.id}" class="product-link block group/card rounded-2xl overflow-hidden transition-all duration-[${ANIMATIONS.NORMAL}ms] cursor-pointer">
       <div class="aspect-square bg-transparent flex items-center justify-center overflow-hidden rounded-2xl relative">
         <img
           src="${product.image}"
@@ -39,16 +40,16 @@ export function createProductCard(product, options = {}) {
           class="w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover/card:scale-110"
           onerror="this.style.display='none'"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-[${ANIMATIONS.NORMAL}ms]"></div>
       </div>
-      <div class="p-3 pb-4 bg-[#181414] transform transition-transform duration-300">
-        <h3 class="text-sm md:text-base font-bold truncate text-white leading-tight transition-colors duration-300 group-hover/card:text-[#57B660]">
+      <div class="p-3 pb-4 bg-[${COLORS.BACKGROUND}] transform transition-transform duration-[${ANIMATIONS.NORMAL}ms]">
+        <h3 class="text-sm md:text-base font-bold truncate text-white leading-tight transition-colors duration-[${ANIMATIONS.NORMAL}ms] group-hover/card:text-[${COLORS.PRIMARY}]">
           ${product.title}
         </h3>
         <p class="text-[11px] md:text-xs text-gray-400 truncate mt-1">
           ${product.artist}
         </p>
-        <p class="text-sm md:text-base text-[#57B660] mt-2 font-bold">
+        <p class="text-sm md:text-base text-[${COLORS.PRIMARY}] mt-2 font-bold">
           ${product.price}
         </p>
       </div>
@@ -65,18 +66,20 @@ export function renderNewest() {
 
   grid.querySelectorAll('.skeleton-card').forEach((el) => el.remove());
 
-  products.slice(0, 4).forEach((product) => {
+  products.slice(0, PRODUCTS_CONFIG.NEWEST_VISIBLE).forEach((product) => {
     grid.appendChild(createProductCard(product, { layout: 'grid' }));
   });
 
-  products.slice(4, 8).forEach((product) => {
-    grid.appendChild(
-      createProductCard(product, {
-        layout: 'grid',
-        isDesktopOnly: true,
-      }),
-    );
-  });
+  products
+    .slice(PRODUCTS_CONFIG.NEWEST_VISIBLE, PRODUCTS_CONFIG.NEWEST_DESKTOP)
+    .forEach((product) => {
+      grid.appendChild(
+        createProductCard(product, {
+          layout: 'grid',
+          isDesktopOnly: true,
+        }),
+      );
+    });
 }
 
 export function renderDiscover(category = 'All', append = false) {
@@ -89,13 +92,16 @@ export function renderDiscover(category = 'All', append = false) {
   state.discover.category = category;
 
   if (!append) {
-    state.discover.displayCount = 8;
+    state.discover.displayCount = PRODUCTS_CONFIG.DISCOVER_INITIAL;
     grid.classList.add('fade-out');
 
     setTimeout(() => {
       grid.innerHTML = '';
 
-      const initialCount = Math.min(8, products.length);
+      const initialCount = Math.min(
+        PRODUCTS_CONFIG.DISCOVER_INITIAL,
+        products.length,
+      );
       products.slice(0, initialCount).forEach((product) => {
         grid.appendChild(createProductCard(product, { layout: 'flex' }));
       });
@@ -103,10 +109,10 @@ export function renderDiscover(category = 'All', append = false) {
       grid.classList.remove('fade-out');
       grid.classList.add('fade-in');
       updateSeeMoreButton(products.length);
-    }, 200);
+    }, PRODUCTS_CONFIG.FADE_DELAY);
   } else {
     const startIndex = state.discover.displayCount;
-    const endIndex = startIndex + 6;
+    const endIndex = startIndex + PRODUCTS_CONFIG.DISCOVER_LOAD_MORE;
     const newProducts = products.slice(startIndex, endIndex);
 
     newProducts.forEach((product, index) => {
@@ -117,7 +123,7 @@ export function renderDiscover(category = 'All', append = false) {
       setTimeout(() => {
         card.classList.remove('card-enter');
         card.classList.add('card-enter-active');
-      }, index * 50);
+      }, index * ANIMATIONS.STAGGER);
     });
 
     state.discover.displayCount += newProducts.length;
@@ -156,8 +162,7 @@ export function setupCategoryFilters() {
 
     container.querySelectorAll('.category-filter').forEach((btn) => {
       if (btn === button) {
-        btn.className =
-          'category-filter px-5 md:px-7 py-2 rounded-full bg-[#57B660] text-black text-xs md:text-sm font-medium transition-all hover:bg-[#4da555]';
+        btn.className = `category-filter px-5 md:px-7 py-2 rounded-full bg-[${COLORS.PRIMARY}] text-black text-xs md:text-sm font-medium transition-all hover:bg-[${COLORS.PRIMARY_HOVER}]`;
       } else {
         btn.className =
           'category-filter px-5 md:px-7 py-2 rounded-full bg-transparent border border-gray-600 text-white text-xs md:text-sm font-medium transition-all hover:bg-white/10';
@@ -194,14 +199,14 @@ export function setupScrollNavigation() {
 
   if (!leftBtn || !rightBtn || !grid) return;
 
-  const scrollAmount = 184 * 2;
+  const scrollAmount = PRODUCTS_CONFIG.SCROLL_AMOUNT;
 
   const scrollLeft = () => {
     grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     leftBtn.style.transform = 'scale(0.9)';
     setTimeout(() => {
       leftBtn.style.transform = '';
-    }, 150);
+    }, ANIMATIONS.FAST);
   };
 
   const scrollRight = () => {
@@ -209,7 +214,7 @@ export function setupScrollNavigation() {
     rightBtn.style.transform = 'scale(0.9)';
     setTimeout(() => {
       rightBtn.style.transform = '';
-    }, 150);
+    }, ANIMATIONS.FAST);
   };
 
   if (leftBtn._scrollHandler) {
