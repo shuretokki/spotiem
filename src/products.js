@@ -50,7 +50,7 @@ export const createProductCard = (product, options = {}) => {
         />
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-[${ANIMATIONS.NORMAL}ms]"></div>
       </div>
-      <div class="p-3 pb-4 bg-[${COLORS.BACKGROUND}] transform transition-transform duration-[${ANIMATIONS.NORMAL}ms]">
+      <div class="py-3 pb-4 bg-[${COLORS.BACKGROUND}] transform transition-transform duration-[${ANIMATIONS.NORMAL}ms]">
         <h3 class="text-sm md:text-base font-bold truncate text-white leading-tight transition-colors duration-[${ANIMATIONS.NORMAL}ms] group-hover/card:text-[${COLORS.PRIMARY}]">
           ${product.title}
         </h3>
