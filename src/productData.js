@@ -1,9 +1,5 @@
 /** @format */
 
-/**
- * SAMPLE
- */
-
 export const products = [
   {
     id: '1',
@@ -428,7 +424,6 @@ export const products = [
 ];
 
 /**
- * Get product by ID
  * @param {string} id - Product ID
  * @returns {Object|null} - Product object or null if not found
  */
@@ -437,7 +432,6 @@ export function getProductById(id) {
 }
 
 /**
- * Get all products
  * @returns {Array} - Array of all products
  */
 export function getAllProducts() {
@@ -445,7 +439,6 @@ export function getAllProducts() {
 }
 
 /**
- * Get products by category
  * @param {string} category - Category name ('All', 'IEM', 'Headphone', 'Eartips')
  * @returns {Array} - Filtered array of products
  */

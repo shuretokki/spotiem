@@ -1,5 +1,43 @@
 /** @format */
 
+/**
+ * @module Carousel
+ * @class Carousel
+ *
+ * @param {Array<Object>} slides - Array of slide objects with image sources and titles.
+ * @param {Object} [options] - Optional configuration overrides.
+ * @param {number} [options.autoplayDelay] - Delay in ms between auto-rotating slides.
+ * @param {number} [options.transitionDuration] - Duration in ms for slide transitions.
+ * @param {number} [options.threshold] - Intersection observer threshold.
+ *
+ * @property {Array<Object>} slides - The slides data.
+ * @property {number} currentSlide - The index of the currently active slide.
+ * @property {boolean} isTransitioning - Whether a slide transition is in progress.
+ * @property {number|null} autoRotateInterval - Interval ID for autoplay.
+ * @property {IntersectionObserver|null} observer - Intersection observer instance.
+ * @property {Object} config - Carousel configuration.
+ * @property {number} touchStart - X position for touch start.
+ * @property {number} touchEnd - X position for touch end.
+ *
+ * @method init - Initializes the carousel, renders slides, sets up handlers.
+ * @method removeSkeleton - Removes the loading skeleton if present.
+ * @method createSlides - Renders all slides into the container.
+ * @method createSlideElement - Creates a single slide element.
+ * @method setupTouchHandlers - Adds touch event listeners for swipe navigation.
+ * @method handleSwipe - Handles swipe gesture to navigate slides.
+ * @method setupIntersectionObserver - Sets up observer for autoplay on visibility.
+ * @method renderIndicators - Renders navigation indicators/buttons.
+ * @method preloadImages - Preloads the first two slides' images for performance.
+ * @method updatePosition - Updates the slide position and indicators.
+ * @method next - Advances to the next slide.
+ * @method prev - Goes to the previous slide.
+ * @method goTo - Navigates to a specific slide index.
+ * @method startAutoplay - Starts the autoplay interval.
+ * @method stopAutoplay - Stops the autoplay interval.
+ * @method resetAutoplay - Restarts autoplay after manual navigation.
+ * @method destroy - Cleans up observers and intervals.
+ */
+
 import { CAROUSEL_CONFIG, COLORS, ANIMATIONS } from './constants.js';
 
 export class Carousel {

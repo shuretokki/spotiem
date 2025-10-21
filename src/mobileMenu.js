@@ -1,7 +1,10 @@
 /** @format */
 
-import { ANIMATIONS } from './constants.js';
+import { ANIMATIONS } from './constants';
 
+/**
+ * @class
+ */
 export class MobileMenu {
   #menu = document.getElementById('mobile-menu');
   #hamburgerBtn = document.getElementById('hamburger-btn');
@@ -9,6 +12,9 @@ export class MobileMenu {
   #body = document.body;
   #isOpen = false;
 
+  /**
+   * @returns {MobileMenu} The MobileMenu instance
+   */
   init() {
     if (!this.#menu || !this.#hamburgerBtn) return this;
 
@@ -16,6 +22,9 @@ export class MobileMenu {
     return this;
   }
 
+  /**
+   * @returns {void}
+   */
   #setupEventListeners() {
     this.#hamburgerBtn.addEventListener('click', () => this.open());
     this.#closeBtn?.addEventListener('click', () => this.close());
@@ -33,6 +42,9 @@ export class MobileMenu {
     });
   }
 
+  /**
+   * @returns {void}
+   */
   open() {
     this.#menu.classList.add('active');
     this.#hamburgerBtn.classList.add('active');
@@ -40,6 +52,9 @@ export class MobileMenu {
     this.#isOpen = true;
   }
 
+  /**
+   * @returns {void}
+   */
   close() {
     this.#menu.classList.remove('active');
     this.#hamburgerBtn.classList.remove('active');
@@ -47,10 +62,16 @@ export class MobileMenu {
     this.#isOpen = false;
   }
 
+  /**
+   * @returns {void}
+   */
   toggle() {
     this.#isOpen ? this.close() : this.open();
   }
 
+  /**
+   * @returns {void}
+   */
   destroy() {
     this.close();
   }

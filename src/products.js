@@ -11,6 +11,14 @@ const state = {
   },
 };
 
+/**
+ * @param {Object} product - The product object
+ * @param {Object} [options] - Options for layout and display
+ * @param {string} [options.layout] - Layout type ('grid' or 'flex')
+ * @param {boolean} [options.isDesktopOnly] - Show only on desktop
+ * @param {boolean} [options.isMobileCentered] - Center on mobile
+ * @returns {HTMLDivElement} The product card element
+ */
 export const createProductCard = (product, options = {}) => {
   const {
     layout = 'grid',
@@ -59,6 +67,9 @@ export const createProductCard = (product, options = {}) => {
   return cardWrapper;
 };
 
+/**
+ * @returns {void}
+ */
 export const renderNewest = () => {
   const products = getAllProducts();
   const grid = document.getElementById('newest-grid');
@@ -80,6 +91,11 @@ export const renderNewest = () => {
     });
 };
 
+/**
+ * @param {string} [category='All'] - The category to filter by
+ * @param {boolean} [append=false] - Whether to append more products
+ * @returns {void}
+ */
 export const renderDiscover = (category = 'All', append = false) => {
   const products = getProductsByCategory(category);
   const grid = document.getElementById('discover-grid');
@@ -129,6 +145,10 @@ export const renderDiscover = (category = 'All', append = false) => {
   }
 };
 
+/**
+ * @param {number} totalProducts - Total number of products
+ * @returns {void}
+ */
 const updateSeeMoreButton = (totalProducts) => {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
@@ -143,6 +163,9 @@ const updateSeeMoreButton = (totalProducts) => {
   }
 };
 
+/**
+ * @returns {void}
+ */
 export const setupCategoryFilters = () => {
   const container = document.getElementById('category-filters');
   if (!container) return;
@@ -174,6 +197,9 @@ export const setupCategoryFilters = () => {
   container.addEventListener('click', handler);
 };
 
+/**
+ * @returns {void}
+ */
 export const setupSeeMoreButton = () => {
   const btn = document.getElementById('see-more-btn');
   if (!btn) return;
@@ -190,6 +216,9 @@ export const setupSeeMoreButton = () => {
   btn.addEventListener('click', handler);
 };
 
+/**
+ * @returns {void}
+ */
 export const setupScrollNavigation = () => {
   const leftBtn = document.getElementById('newest-scroll-left');
   const rightBtn = document.getElementById('newest-scroll-right');
@@ -240,6 +269,9 @@ export const setupScrollNavigation = () => {
   setTimeout(updateArrowVisibility, 500);
 };
 
+/**
+ * @returns {Object} The discover state object
+ */
 export const getDiscoverState = () => {
   return { ...state.discover };
 };
