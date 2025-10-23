@@ -9,7 +9,7 @@
 
 # Spotiem
 
-Spotiem is a modern, single-page e-commerce application for browsing and discovering audio products. This project is built with vanilla JavaScript, showcasing a clean and organized architecture without a heavy framework dependency. It's styled with Tailwind CSS and uses Vite for a fast and efficient development experience.
+Spotiem is a modern, single-page e-commerce application for browsing and discovering audio products. This project is built with vanilla JavaScript, showcasing a clean and organized architecture without a heavy framework dependency. It's styled with Tailwind CSS and uses Vite.
 
 ## Features
 
@@ -68,7 +68,7 @@ Spotiem is a modern, single-page e-commerce application for browsing and discove
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/shuretokki/spotiem.git](https://github.com/shuretokki/spotiem.git)
+    git clone https://github.com/shuretokki/spotiem.git
     cd spotiem
     ```
 
