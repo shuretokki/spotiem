@@ -1,10 +1,11 @@
 ![Screenshot](/public/screenshot.png)
 
-[![Watch the Presentation on YouTube](https://img.shields.io/badge/:-Youtube_Presentation-red?logo=youtube)](https://youtu.be/BO9WFylC108)
-[![Open Figma Workspace](https://img.shields.io/badge/:-Figma_Workspace-blue?logo=figma)](https://www.figma.com/design/zw2wlQeQRifD2hPSPqotgg/Spotiem?node-id=104-1633&t=bkVoiMAMtyP9erzG-1)
+
 
 > [!NOTE]  
-> Web ini hanya untuk kepentingan proyek **UTS PBP 2025/2026 Ganjil**
+> Web ini hanya untuk kepentingan proyek **UTS PBP 2025/2026 Ganjil** <br> <br>
+> [![Watch the Presentation on YouTube](https://img.shields.io/badge/Presentasi-red?logo=youtube)](https://youtu.be/BO9WFylC108)
+> [![Open Figma Workspace](https://img.shields.io/badge/Figma-blue?logo=figma)](https://www.figma.com/design/zw2wlQeQRifD2hPSPqotgg/Spotiem?node-id=104-1633&t=bkVoiMAMtyP9erzG-1)
 
 # Spotiem
 
