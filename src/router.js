@@ -1,5 +1,7 @@
 /** @format */
 
+import { notFoundTemplate } from './templates';
+
 /**
  * @class
  */
@@ -65,7 +67,7 @@ class Router {
       const [, handler] = matchedRoute;
       handler(this.#params);
     } else {
-      this.#routes.get('/')?.({});
+      document.querySelector('app-content').innerHTML = notFoundTemplate();
     }
 
     requestAnimationFrame(() => {

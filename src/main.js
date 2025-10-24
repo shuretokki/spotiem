@@ -2,8 +2,14 @@
 
 import './style.css';
 import { router } from './router.js';
-import { homeTemplate, productDetailTemplate } from './templates.js';
-import { contactTemplate, setupContactForm } from './contact.js';
+import {
+  homeTemplate,
+  productDetailTemplate,
+  contactTemplate,
+  aboutTemplate,
+  notFoundTemplate,
+  blogTemplate,
+} from './templates.js';
 import { Carousel, setupCarouselButtons } from './carousel.js';
 import { MobileMenu } from './mobileMenu.js';
 import {
@@ -23,6 +29,8 @@ const initializeRouter = () => {
   router.register('/', renderHomePage);
   router.register('/product/:id', ({ id }) => renderProductDetailPage(id));
   router.register('/contact', renderContactPage);
+  router.register('/about', renderAboutPage);
+  router.register('/blog', renderBlogPage);
   setupLinkInterception();
 };
 
@@ -42,10 +50,7 @@ const setupLinkInterception = () => {
 };
 
 const renderHomePage = () => {
-  const appContent = document.querySelector('app-content');
-  if (!appContent) return;
-
-  appContent.innerHTML = homeTemplate();
+  document.querySelector('app-content').innerHTML = homeTemplate();
   requestAnimationFrame(() => initHomeComponents());
 };
 
@@ -64,21 +69,33 @@ const initHomeComponents = () => {
 };
 
 const renderContactPage = () => {
-  const appContent = document.querySelector('app-content');
-  if (!appContent) return;
-
-  appContent.innerHTML = contactTemplate();
+  document.querySelector('app-content').innerHTML = contactTemplate();
   requestAnimationFrame(() => setupContactForm());
 };
 
+export function setupContactForm() {
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('contact-success');
+  if (!form) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.reset();
+    successMsg.classList.remove('hidden');
+    setTimeout(() => successMsg.classList.add('hidden'), 4000);
+  });
+}
+
+const renderAboutPage = () => {
+  const app = document.querySelector('app-content');
+  app.innerHTML = aboutTemplate();
+};
+
+const renderBlogPage = () => {
+  document.querySelector('app-content').innerHTML = blogTemplate();
+};
 const renderProductDetailPage = (productId) => {
-  const appContent = document.querySelector('app-content');
-  if (!appContent) return;
-
-  const product = getProduct(productId);
-
-  if (!product) {
-    appContent.innerHTML = `
+  if (!getProduct(productId)) {
+    document.querySelector('app-content').innerHTML = `
       <div class="flex flex-col items-center justify-center py-20 px-4">
         <h1 class="text-4xl font-bold text-white mb-4">Product Not Found</h1>
         <p class="text-gray-400 mb-8">The product you're looking for doesn't exist.</p>
@@ -90,7 +107,9 @@ const renderProductDetailPage = (productId) => {
     return;
   }
 
-  appContent.innerHTML = productDetailTemplate(product);
+  document.querySelector('app-content').innerHTML = productDetailTemplate(
+    getProduct(productId),
+  );
   requestAnimationFrame(() => initProductDetail(productId));
 };
 

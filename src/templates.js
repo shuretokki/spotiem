@@ -254,3 +254,133 @@ export function loadingScreenTemplate() {
     </div>
   `;
 }
+
+export function contactTemplate() {
+  return `
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
+      <div class="w-full max-w-lg bg-[#181414] rounded-2xl shadow-lg p-8 flex flex-col gap-6">
+        <h1 class="text-3xl font-bold text-[#57B660] mb-2 text-center">Contact Us</h1>
+        <p class="text-white text-center mb-4">Have a question, feedback, or business inquiry? Fill out the form below and we'll get back to you soon!</p>
+        <form id="contact-form" class="flex flex-col gap-4">
+          <input type="text" name="name" placeholder="Your Name" required class="w-full bg-transparent border border-gray-600 rounded-md px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors" />
+          <input type="email" name="email" placeholder="Your Email" required class="w-full bg-transparent border border-gray-600 rounded-md px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors" />
+          <textarea name="message" placeholder="Your Message" required rows="4" class="w-full bg-transparent border border-gray-600 rounded-md px-4 py-2 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#57B660] transition-colors"></textarea>
+          <button type="submit" class="w-full py-3 bg-[#57B660] rounded-md text-[#181414] text-base font-bold hover:bg-[#4da555] transition-all">Send Message</button>
+        </form>
+        <div id="contact-success" class="hidden text-green-500 text-center font-semibold mt-2">Thank you! We'll be in touch soon.</div>
+      </div>
+    </section>
+  `;
+}
+
+export function aboutTemplate() {
+  return `
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
+      <div class="w-full max-w-2xl bg-[#181414] rounded-2xl shadow-lg p-8 flex flex-col gap-6 text-white">
+        <h1 class="text-3xl font-bold text-[#57B660] mb-2 text-center">About Spotiem</h1>
+        <p class="text-center mb-4 text-gray-300">
+          Welcome to Spotiem, your ultimate destination for premium audio experiences.
+          We are passionate about delivering the finest In-Ear Monitors (IEMs),
+          headphones, and audio accessories to audiophiles and music lovers alike.
+        </p>
+
+        <div class="flex flex-col gap-4">
+          <h2 class="text-xl font-semibold text-[#57B660]">Our Mission</h2>
+          <p class="text-gray-300">
+            Our mission is to connect you with the perfect audio gear that
+            transforms your listening experience. We carefully curate our collection,
+            featuring products from renowned brands known for their exceptional
+            sound quality, innovative technology, and superior craftsmanship.
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h2 class="text-xl font-semibold text-[#57B660]">What We Offer</h2>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li><strong>High-Fidelity IEMs:</strong> Discover a wide range of IEMs, from entry-level marvels to flagship models, designed for pristine audio reproduction.</li>
+            <li><strong>Premium Headphones:</strong> Explore our selection of over-ear and on-ear headphones, offering immersive soundstages and unparalleled comfort.</li>
+            <li><strong>Quality Accessories:</strong> Enhance your setup with our collection of eartips, cables, and cases, all chosen for their performance and durability.</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h2 class="text-xl font-semibold text-[#57B660]">Why Choose Us?</h2>
+          <ul class="list-disc list-inside text-gray-300 space-y-2">
+            <li><strong>Curated Selection:</strong> Every product is hand-picked for its quality and performance.</li>
+            <li><strong>Expert Advice:</strong> Our team is passionate about audio and ready to help you find your perfect match.</li>
+            <li><strong>Customer Satisfaction:</strong> We are committed to providing an excellent shopping experience and after-sales support.</li>
+          </ul>
+        </div>
+
+        <p class="text-center mt-4 text-gray-300">
+          Join the Spotiem family and elevate your audio journey.
+          Thank you for choosing us as your trusted audio partner!
+        </p>
+      </div>
+    </section>
+  `;
+}
+
+export function notFoundTemplate() {
+  return `
+
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12"><div class="text-center"><h1 class="text-6xl font-bold text-[#57B660] mb-4">404</h1>
+        <p class="text-xl text-white mb-8">Page Not Found</p>
+        <a href="/" class="product-link px-8 py-3 bg-[#57B660] text-black rounded-full hover:bg-[#4da555] transition-all">Go to Homepage</a>
+      </div>
+    </section>
+`;
+}
+
+export function blogTemplate() {
+  return `    <section class="min-h-[60vh] flex flex-col items-center justify-center px-4 py-12">
+      <div class="w-full max-w-2xl bg-[#181414] rounded-2xl shadow-lg p-8 flex flex-col gap-6 text-white">
+        <h1 class="text-3xl font-bold text-[#57B660] mb-2 text-center">Our Blog</h1>
+        <p class="text-center mb-4 text-gray-300">
+          Stay updated with the latest news, reviews, and insights from the world of high-fidelity audio.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Blog Post 1 -->
+          <article class="p-4 flex flex-col gap-3">
+            <h3 class="text-xl font-semibold text-[#57B660]">The Evolution of IEMs</h3>
+            <p class="text-gray-400 text-sm">
+              Explore how In-Ear Monitors have transformed from simple earbuds to sophisticated audio devices.
+            </p>
+            <a href="/blog1.html" class="text-[#57B660] hover:underline text-sm self-end">Read More</a>
+          </article>
+
+          <!-- Blog Post 2 -->
+          <article class="p-4 flex flex-col gap-3">
+            <h3 class="text-xl font-semibold text-[#57B660]">Choosing Your First Audiophile Headphone</h3>
+            <p class="text-gray-400 text-sm">
+              A comprehensive guide to help beginners select the perfect pair of headphones.
+            </p>
+            <a href="#" class="text-[#57B660] hover:underline text-sm self-end">Read More</a>
+          </article>
+
+          <!-- Blog Post 3 -->
+          <article class="p-4 flex flex-col gap-3">
+            <h3 class="text-xl font-semibold text-[#57B660]">Top 5 Audio Accessories for Audiophiles</h3>
+            <p class="text-gray-400 text-sm">Discover essential accessories that can elevate your listening experience to the next level.
+            </p>
+            <a href="#" class="text-[#57B660] hover:underline text-sm self-end">Read More</a>
+          </article>
+
+          <!-- Blog Post 4 -->
+          <article class="p-4 flex flex-col gap-3">
+            <h3 class="text-xl font-semibold text-[#57B660]">Understanding Frequency Response Charts</h3>
+            <p class="text-gray-400 text-sm">
+              Learn how to interpret frequency response graphs to understand the sound signature of your audio gear.
+            </p>
+            <a href="#" class="text-[#57B660] hover:underline text-sm self-end">Read More</a>
+          </article>
+        </div>
+
+        <p class="text-center mt-4 text-gray-300">
+          Want to contribute or suggest a topic? <a href="/contact" class="text-[#57B660] hover:underline product-link">Contact us!</a>
+        </p>
+      </div>
+    </section>
+  `;
+}
