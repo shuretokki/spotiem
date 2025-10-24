@@ -1,11 +1,15 @@
 ![Screenshot](/public/screenshot.png)
 
-[![Watch the Presentation on YouTube](https://img.shields.io/badge/:-Youtube_Presentation-red?logo=youtube)](https://youtu.be/BO9WFylC108)
-[![Open Figma Workspace](https://img.shields.io/badge/:-Figma_Workspace-blue?logo=figma)](https://www.figma.com/design/zw2wlQeQRifD2hPSPqotgg/Spotiem?node-id=104-1633&t=bkVoiMAMtyP9erzG-1)
+
+
+> [!NOTE]  
+> Web ini hanya untuk kepentingan proyek **UTS PBP 2025/2026 Ganjil** <br> <br>
+> [![Watch the Presentation on YouTube](https://img.shields.io/badge/Presentasi-red?logo=youtube)](https://youtu.be/BO9WFylC108)
+> [![Open Figma Workspace](https://img.shields.io/badge/Figma-blue?logo=figma)](https://www.figma.com/design/zw2wlQeQRifD2hPSPqotgg/Spotiem?node-id=104-1633&t=bkVoiMAMtyP9erzG-1)
 
 # Spotiem
 
-Spotiem is a modern, single-page e-commerce application for browsing and discovering audio products. This project is built with vanilla JavaScript, showcasing a clean and organized architecture without a heavy framework dependency. It's styled with Tailwind CSS and uses Vite for a fast and efficient development experience.
+Spotiem is a modern, single-page e-commerce application for browsing and discovering audio products. This project is built with vanilla JavaScript, showcasing a clean and organized architecture without a heavy framework dependency. It's styled with Tailwind CSS and uses Vite.
 
 ## Features
 
@@ -64,7 +68,7 @@ Spotiem is a modern, single-page e-commerce application for browsing and discove
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/shuretokki/spotiem.git](https://github.com/shuretokki/spotiem.git)
+    git clone https://github.com/shuretokki/spotiem.git
     cd spotiem
     ```
 
